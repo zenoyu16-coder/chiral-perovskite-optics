@@ -1,18 +1,18 @@
 # Experiment notes
 
-The open-data work suggests one experiment worth discussing with an optical spectroscopy group: time-dependent circular polarization of PL from matched R- and S-MBA perovskite films.
+The first experiment I would discuss with a spectroscopy group is circularly polarized PL from R- and S-MBA₂PbI₄ films. I would begin with the simpler layered films rather than trying to reproduce the superlattices used by Wei et al. This is a proposed measurement, not an experiment already carried out.
 
 ## First check: polarization measurement
 
-Before preparing any films, confirm that the available setup can collect separate LCP and RCP emission spectra with a calibrated detection path. I have not established access to such a setup. A normal PL spectrometer or an unpolarized TRPL instrument would not answer this question.
+I first need to locate a PL spectrometer with a quarter-wave plate and linear polarizer in the emission collection path, ideally with a calibrated polarization response. I have not confirmed that such optics are available to me. A conventional PL or unpolarized TRPL measurement would only provide the total intensity.
 
-The first useful measurement would be steady-state PL from a small R/S pair prepared under the same conditions. Record both helicity channels, then repeat the measurement after rotating the sample (for example, 0°, 90° and 180°), with the optics and collection geometry held fixed. This helps reveal texture-dependent apparent polarization. Analyzer calibration and possible linear dichroism or birefringence should be checked before interpreting the circular component.
+At fixed excitation wavelength and detection geometry, I would collect LCP/RCP spectra from a marked region of each film, then repeat at 0°, 90° and 180° sample orientations. Reference measurements of the two analyzer states are needed to establish the instrument's own intensity imbalance; the linear-polarization response should be checked as well. A reversal that follows sample orientation more strongly than R/S handedness would point to an optical-anisotropy or measurement problem.
 
 ## Initial samples
 
-Start with two independently prepared films of each handedness if synthesis access permits, rather than a large library. Check phase and film quality by XRD, absorption and ordinary PL. A racemic film or an achiral reference may be useful, but it needs its own phase and morphology check; changing the spacer can change more than chirality.
+The smallest useful sample set is two independently prepared R-MBA₂PbI₄ films and two S-MBA₂PbI₄ films, prepared with matched precursor concentrations, substrates, spin conditions and annealing. Before polarization measurements, I would check XRD, absorption and ordinary PL to see whether the films have comparable phases and emission bands.
 
-If the circular-polarization sign does not reverse reproducibly between R and S, or changes mainly with sample rotation, there is no reason to proceed to the time-resolved measurement in this form.
+I would look first for a repeatable opposite sign between R and S across both preparations, with the optical setup held constant. If the signal is absent or dominated by sample rotation, I would stop at steady-state measurements and examine the optics and film texture. An achiral or racemic control would be useful once its phase and morphology are characterized, rather than assuming that a different spacer provides a like-for-like control.
 
 ## Time-resolved measurement
 

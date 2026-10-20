@@ -1,8 +1,8 @@
 # Optical data from chiral layered perovskites
 
-This started with a comparison of R-, S- and racemic NEA₂PbBr₄ crystal structures. The symmetry assignments were straightforward, but the available optical measurements were made on different crystals or thin films. There was no direct way to relate a particular octahedral distortion to a measured circular-dichroism signal.
+I began with the 298 K CIFs for R-, S- and racemic NEA₂PbBr₄ from Jana et al. The R/S crystals have the same space group, `P2₁`, while the racemate is `P2₁/c`. One calculated quantity looked promising at first: the Pb-to-halide-centroid displacement projected onto the crystallographic b-axis had opposite signs for R and S. I then reversed the b-axis in the same structures without moving any atoms. The displacement signs flipped too. I kept the geometric measurements but dropped that signed projection as an indicator of absolute handedness.
 
-I subsequently looked at published optical datasets that contained both polarization channels, especially the chiral superlattice measurements reported by Wei et al. in 2026. The repository contains the corresponding analysis scripts, selected plots and structural comparisons. All spectra and crystal structures are taken from the cited experimental studies.
+The next difficulty was connecting a particular structure to an optical measurement. The available crystal and thin-film data came from different specimens, so I turned to datasets with measured optical channels. Hautzinger et al.'s R/S spectra exposed a practical parsing problem: their CD, absorbance and PL columns have different wavelength axes and blank cells. Splitting on arbitrary whitespace shifted the columns; reading the file as tab-separated data fixed it. The resulting R/S CD correlation is −0.8752, compared with 0.9992 for ordinary absorption. Those observations led to the polarized-emission data examined below. The spectra and structures throughout this repository come from the cited publications.
 
 ## Time-resolved emission
 
@@ -12,7 +12,7 @@ Wei et al., [*Nature* **654**, 369–374 (2026)](https://doi.org/10.1038/s41586-
 
 Taking the left- and right-circular channels at the maximum of their summed intensity gives peak circular polarization of +13.49% for S-MBA and −13.76% for R-MBA. The corresponding values after subtracting the pre-burst background are +13.52% and −13.81%. Both agree with the published values near 300 µJ cm⁻².
 
-There is a small but important issue in the Excel file: the second RMBA channel is also headed `LCP`. Its numerical values reproduce the negative polarization reported in the paper when treated as the opposite-helicity channel. The script preserves the deposited header and records this interpretation separately.
+Both RMBA intensity columns in the published Excel file are labeled `LCP`. Treating the second as the opposite-helicity channel gives the negative polarization plotted in Fig. 3d. I left the original headings untouched and noted the likely labeling error in the output.
 
 The source traces are sampled approximately every 0.35 ps, although the streak-camera resolution reported in the paper is about 10 ps. I have left the analysis at the measured polarization contrast rather than fitting a relaxation time to that sampling interval.
 
@@ -34,9 +34,9 @@ Another mismatch occurs in the deposited RMBA data: Extended Data Fig. 7a has a 
 
 ## Other measurements
 
-The [Hautzinger et al. spin-LED dataset](https://doi.org/10.1038/s41586-024-07560-4) has R/S-MBA absorption, CD and circularly polarized electroluminescence data. The absorption spectra nearly overlap (Pearson r = 0.9992), while the CD traces change sign but are not exact mirror images (r = −0.8752). The electroluminescence comes from an AlGaInP quantum well, so it is treated as a separate device experiment.
+The [Hautzinger et al. spin-LED dataset](https://doi.org/10.1038/s41586-024-07560-4) also includes circularly polarized electroluminescence. The light comes from an AlGaInP quantum well, not directly from the chiral perovskite. Its two deposited polarization columns have no R/S identifiers, so I kept their original names.
 
-The [Jana et al. crystal structures](https://doi.org/10.1038/s41467-020-18485-7) give `P2₁` for R/S-NEA₂PbBr₄ and `P2₁/c` for the racemate at 298 K. The local Pb–Br geometry and a separate S-MBA₂PbI₄ temperature series are retained under `results/`. An additional front/back CD dataset and a nonchiral transient-absorption example were used to check source-file handling.
+The [Jana et al. crystal structures](https://doi.org/10.1038/s41467-020-18485-7), the S-MBA₂PbI₄ temperature series, the S-NEA front/back CD measurements and a nonchiral transient-absorption dataset are included as separate checks. Their calculated values and source notes are collected in `results/` and `data/README.md`.
 
 [Detailed results](docs/results.md) · [Methods](docs/methods.md) · [Original datasets](data/README.md)
 
@@ -56,6 +56,6 @@ Source measurements stay in `data/raw/`, outside version control. `src/chiral_pe
 
 ## Possible experiment
 
-I have not collected new samples or polarization-resolved measurements for this repository. Before attempting a time-resolved chirality experiment, the practical first step is to establish whether reliable circular-polarization-resolved PL is available for matched R/S films, with sample rotation and polarization calibration. Without that measurement, further analysis of these published traces would mostly revisit the authors' results.
+The project is paused before new experiments. The first practical question is whether I can access a PL spectrometer with a calibrated quarter-wave plate and linear polarizer in the collection path. I would start with independently prepared R- and S-MBA₂PbI₄ films, check XRD/absorption/PL, and measure both circular channels from the same spot before and after rotating each sample. Only a repeatable handedness-dependent signal would justify requesting polarization-resolved TRPL. I have not confirmed access to the required optics or prepared these samples.
 
 [Experimental notes](docs/experimental-follow-up.md) · [License](LICENSE) · [Citation](CITATION.cff)
