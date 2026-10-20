@@ -6,6 +6,21 @@ Question: How does a chiral molecular spacer alter the geometry of an inorganic 
 
 The repository uses real experimental data and keeps source provenance. There is no ML or DFT model at this stage.
 
+## Stage 3 — exciton and polarization dynamics (current)
+
+Before developing a kinetic mechanism, we audited availability of original, **matched R/S time-resolved polarization measurements**. See [data feasibility and acceptance criteria](docs/dynamics-data-feasibility.md). No complete downloadable R/S counterpart with independently verified timing/channel metadata has been secured yet.
+
+As a **nonchiral methodological control**, we downloaded a plain-text polarization-resolved transient absorption dataset associated with Bourelle et al., *Nano Letters* (2020), [doi:10.1021/acs.nanolett.0c00867](https://doi.org/10.1021/acs.nanolett.0c00867), Cambridge [CAM.54010](https://doi.org/10.17863/CAM.54010). The published article identifies the studied material as BA2FAPb2I7.
+
+```powershell
+python -m pip install -e ".[dev,viz]"
+python -m chiral_perovskites.dynamics_pilot fetch
+python -m chiral_perovskites.dynamics_pilot audit
+python -m pytest -q
+```
+
+This stage parses 312 time points and six deposition-labeled channels, checks baseline/noise, and plots traces. Results: `results/dynamics_cambridge_qa.json` and `results/dynamics_cambridge_channels.png`. Neither a spin lifetime nor a chiral effect is inferred from this archive. The next gate is access to a properly documented R/S or matched chiral/rac sample-level kinetic dataset.
+
 ## Stage 2 — matched NEA2PbBr4 (current)
 
 We use original 298 K single-crystal CIFs from Jana et al., *Nature Communications* 11, 4699 (2020), doi: [10.1038/s41467-020-18485-7](https://doi.org/10.1038/s41467-020-18485-7):

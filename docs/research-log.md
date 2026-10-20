@@ -13,3 +13,12 @@ Computed signed b-projected Br-centroid/Pb displacement: R +0.034830 Å; S -0.03
 Retrieved separate 2025 measured S-NEA thin-film CD data (Duke 2784). The deposited trace labelled 'average' is numerically front + back, not half their sum, within spectral rounding. This is an unresolved scale/metadata question, not a physics finding. No sample-level 2020–2025 merge.
 
 Next: verify crystallographic convention and CD averaging protocol; only add modeling if a specific missing explanation emerges.
+
+
+## 2026-10-20 — Stage 3: exciton dynamics data availability
+
+After scientific audit of Stage 2, selected a more general physical question: polarization-resolved exciton relaxation and the extent to which a true chiral R/S control changes it. Initial literature/data inspection confirms that accessible papers and displayed plots do not guarantee independently reusable R/S-resolved ultrafast kinetics.
+
+Downloaded a machine-readable, open **nonchiral** transient absorption trace from Cambridge [CAM.54010](https://doi.org/10.17863/CAM.54010). It contains 312 time points (-5 to 1750 ps) and six polarization-labeled columns. Independently coded input checks, baseline/noise summary and a channel plot. Header channels `||` and `X` are preserved without guessing which optical convention they represent. We do **not** fit a spin lifetime from this exercise.
+
+The complete source survey, decisions, and go/no-go criteria are in `docs/dynamics-data-feasibility.md`. The study will only expand when original chiral R/S kinetic data (plus instrument response and measurement metadata) can be obtained.

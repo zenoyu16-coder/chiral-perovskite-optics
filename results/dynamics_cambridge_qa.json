@@ -1,0 +1,89 @@
+{
+  "dataset_doi": "10.17863/CAM.54010",
+  "paper_doi": "10.1021/acs.nanolett.0c00867",
+  "sample_type": "nonchiral_layered_perovskite",
+  "material": "BA2FAPb2I7 (nonchiral reference; paper nomenclature)",
+  "raw_sha256": "82c63fc59479dbc5a46a496f8fdaccfec4867ac014c3eb518f29650a8a6380a2",
+  "time_unit": "ps",
+  "signal_unit": "percent_delta_T_over_T",
+  "n_time_points": 312,
+  "time_range_ps": [
+    -5.0,
+    1750.0
+  ],
+  "pre_pump_count": 34,
+  "valid_source_labels": [
+    "||",
+    "X"
+  ],
+  "channel_assignment": "NOT independently verified as co/counter-circular from file header; source filename includes Co_Cnt",
+  "scientific_limit": "Does not contain enantiomers and cannot establish spin relaxation or a chirality effect. Baseline and early/late averages are descriptive only.",
+  "channels": [
+    {
+      "index_1based": 1,
+      "source_header": "|| (source header)",
+      "spectral_window": "552-557 nm",
+      "baseline_mean_percent": 0.016542898333333333,
+      "baseline_std_percent": 0.010571681957541677,
+      "early_mean_corrected_percent": 3.49543767657435,
+      "late_mean_corrected_percent": 0.5069829961111111,
+      "peak_abs_corrected_percent": 3.842169601666667,
+      "peak_time_ps": 0.225
+    },
+    {
+      "index_1based": 2,
+      "source_header": "|| (source header)",
+      "spectral_window": "574-579 nm",
+      "baseline_mean_percent": -0.01350148434632035,
+      "baseline_std_percent": 0.017312542318227403,
+      "early_mean_corrected_percent": -0.47724640032728427,
+      "late_mean_corrected_percent": -0.04573484112987012,
+      "peak_abs_corrected_percent": 1.7369892299393896,
+      "peak_time_ps": 0.175
+    },
+    {
+      "index_1based": 3,
+      "source_header": "|| (source header)",
+      "spectral_window": "590-595 nm",
+      "baseline_mean_percent": -0.0017193753904112552,
+      "baseline_std_percent": 0.00254982161911411,
+      "early_mean_corrected_percent": -0.6073355397940733,
+      "late_mean_corrected_percent": -0.06883426397466808,
+      "peak_abs_corrected_percent": 0.6569612031810178,
+      "peak_time_ps": 2.625
+    },
+    {
+      "index_1based": 4,
+      "source_header": "X (source header)",
+      "spectral_window": "552-557 nm",
+      "baseline_mean_percent": 0.03268375726863341,
+      "baseline_std_percent": 0.06643162981316739,
+      "early_mean_corrected_percent": 3.8373738212830544,
+      "late_mean_corrected_percent": 0.5394550732082231,
+      "peak_abs_corrected_percent": 5.9687086215746765,
+      "peak_time_ps": 0.2
+    },
+    {
+      "index_1based": 5,
+      "source_header": "X (source header)",
+      "spectral_window": "574-579 nm",
+      "baseline_mean_percent": 0.0006352442665714666,
+      "baseline_std_percent": 0.02359121300411616,
+      "early_mean_corrected_percent": 0.11576719921684386,
+      "late_mean_corrected_percent": -0.05971615752815112,
+      "peak_abs_corrected_percent": 1.8116529573244184,
+      "peak_time_ps": 0.15
+    },
+    {
+      "index_1based": 6,
+      "source_header": "X (source header)",
+      "spectral_window": "590-595 nm",
+      "baseline_mean_percent": -0.006224111266330365,
+      "baseline_std_percent": 0.01760679076302239,
+      "early_mean_corrected_percent": -0.851975757814527,
+      "late_mean_corrected_percent": -0.06526477964994297,
+      "peak_abs_corrected_percent": 2.2071854681436696,
+      "peak_time_ps": 0.225
+    }
+  ]
+}
