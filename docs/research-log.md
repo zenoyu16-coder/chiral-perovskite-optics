@@ -38,3 +38,10 @@ Rechecked the Nature 2024 spin-LED paper against its 2023 arXiv manuscript Fig. 
 New bounded uncertainty test, using deposited Fig. 2c errors without assigning their statistical interpretation: raw signs opposite 6/6 current settings; both A/B error intervals avoid zero at 1x error for 5/6 and 2x error for 4/6. Current points are not independent fabricated devices. See `results/spin_led_uncertainty_gate.json` and `docs/science_gate_2026-10-20.md`.
 
 Found Wei et al., Nature 654 (2026), DOI 10.1038/s41586-026-10637-x, with R/S chiral perovskite superfluorescence, a time-resolved Fig. 3 and publisher XLSX Source Data. Downloaded Fig. 3 XLSX only; its columns and sample-level pairing are NOT yet verified. This is the next data-access checkpoint. Do not expand spin-LED correlations or fit a kinetic mechanism without validated matched raw data.
+
+
+## 2026-10-20 — Stage 5: real R/S time-resolved chiral superfluorescence
+
+Source Data Fig. 3 of Wei et al., Nature 654 (2026), DOI 10.1038/s41586-026-10637-x, retrieved (209,136 byte XLSX). Fig. 3c has 1399 matched-delay sample points for SMBA and RMBA helicity-channel emission. Validated against the deposited experimental Fig. 3d curve. Reproduced peak DCP0 +13.4949% (SMBA) and -13.7612% (RMBA), near the reported +13.5%/-13.8%. Baseline corrections do not change their signs or magnitude materially. RMBA Fig. 3c carries two literal 'LCP' headers; this is flagged rather than silently repaired.
+
+Reproducible code plus tests in `nature_sf_pilot.py`; raw figure workbook not redistributed. The 0.3495 ps source sampling step is far finer than the reported ~10 ps camera temporal resolution. Different sample peak times are not interpretable as intrinsic handedness delays. This is the completed single-observation pilot and does not justify a spin/exciton lifetime fit or large DFT/ML work. See `docs/nature2026_sf_pilot.md`.

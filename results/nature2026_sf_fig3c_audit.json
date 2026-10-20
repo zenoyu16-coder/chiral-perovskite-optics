@@ -1,0 +1,111 @@
+{
+  "paper_doi": "10.1038/s41586-026-10637-x",
+  "source": {
+    "path": "data\\raw\\kinetics\\nature2026_source_fig3.xlsx",
+    "bytes": 209136,
+    "sha256": "4f06825a839ba470e96fc45d9587db4d5f42067c41b2d03762e26ed64d217c29",
+    "doi": "10.1038/s41586-026-10637-x",
+    "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-026-10637-x/MediaObjects/41586_2026_10637_MOESM5_ESM.xlsx"
+  },
+  "publisher_workbook_sheets": [
+    "Fig. 3b",
+    "Fig. 3c",
+    "Fig. 3d"
+  ],
+  "fig3c_source_headers": {
+    "smba": [
+      "Intensity ( SMBA LCP)",
+      "Intensity (SMBA RCP)"
+    ],
+    "rmba": [
+      "Intensity (RMBA LCP)",
+      "Intensity (RMBA LCP)"
+    ],
+    "rmba_second_header_duplicate": true
+  },
+  "pump_condition": "550 nm linear polarization; 300 microjoules per cm^2",
+  "source_kind": "publication Source Data XLSX (digitized/processed figure arrays)",
+  "publisher_temporal_resolution_ps_approx": 10,
+  "warnings": [
+    "Fig. 3c RMBA second-channel header repeats LCP; paper Fig. 3b and Fig. 3d indicate opposite-helicity channel, but no author correction verified.",
+    "0.3495 ps numerical delay spacing is not independent ~10 ps camera resolution.",
+    "No independent acquisition replicates or R/S sample-matched calibration/IRF files here.",
+    "Bright-gate contrast vs time is descriptive; not a spin or exciton polarization lifetime.",
+    "Cannot infer new collective emission mechanism from the author's already published reproduction."
+  ],
+  "samples": {
+    "SMBA": {
+      "n_samples": 1399,
+      "time_min_ps": -59.6505,
+      "time_max_ps": 428.95,
+      "median_sampling_step_ps": 0.34949999999999903,
+      "peak_time_ps": 53.238,
+      "peak_total_baseline_corrected": 81910.49060403509,
+      "dcp0_raw_fraction": 0.1349486161597931,
+      "dcp0_baseline_corrected_fraction": 0.13518797163241436,
+      "baseline_window_ps": [
+        -60.0,
+        -40.0
+      ],
+      "baseline_channel_means": [
+        27.398157894736837,
+        38.15726807017544
+      ],
+      "bright_gate_fraction_of_peak": 0.2,
+      "bright_gate_n_points": 124,
+      "bright_gate_time_range_ps": [
+        33.3165,
+        76.305
+      ],
+      "bright_gate_median_dcp_fraction": 0.12551390408589352,
+      "baseline_sensitivity_dcp0_fraction": {
+        "min": 0.13512794851096038,
+        "max": 0.1352918939302622,
+        "n_windows": 4
+      },
+      "fig3d_reference": {
+        "fluence_uJ_cm2": 296.09,
+        "dcp_fraction_from_fig3d": 0.13529,
+        "deposited_error": 0.001
+      },
+      "raw_dcp0_minus_fig3d_fraction": -0.0003413838402069047
+    },
+    "RMBA": {
+      "n_samples": 1399,
+      "time_min_ps": -59.6505,
+      "time_max_ps": 428.95,
+      "median_sampling_step_ps": 0.34949999999999903,
+      "peak_time_ps": 46.248,
+      "peak_total_baseline_corrected": 26484.58521052632,
+      "dcp0_raw_fraction": -0.13761170026011485,
+      "dcp0_baseline_corrected_fraction": -0.1380656891435327,
+      "baseline_window_ps": [
+        -60.0,
+        -40.0
+      ],
+      "baseline_channel_means": [
+        7.6136491228070176,
+        -3.8988596491228056
+      ],
+      "bright_gate_fraction_of_peak": 0.2,
+      "bright_gate_n_points": 139,
+      "bright_gate_time_range_ps": [
+        26.3265,
+        74.558
+      ],
+      "bright_gate_median_dcp_fraction": -0.13764432761917902,
+      "baseline_sensitivity_dcp0_fraction": {
+        "min": -0.13810578242799285,
+        "max": -0.13798641897334235,
+        "n_windows": 4
+      },
+      "fig3d_reference": {
+        "fluence_uJ_cm2": 294.88,
+        "dcp_fraction_from_fig3d": -0.13662,
+        "deposited_error": 0.0032
+      },
+      "raw_dcp0_minus_fig3d_fraction": -0.0009917002601148583
+    }
+  },
+  "decision": "GO for one-figure reproducible observation; STOP before microscopic model without independent condition/replicate evidence"
+}

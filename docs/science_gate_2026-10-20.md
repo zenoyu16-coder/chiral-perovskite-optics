@@ -1,5 +1,7 @@
 # Decision checkpoint — 20 October 2026
 
+The source workbook identified below has since been inspected. Its Fig. 3c contains matched-delay SMBA/RMBA polarization-channel time traces; a one-figure numerical reproduction has been completed in [Stage 5](nature2026_sf_pilot.md). The original instrument-frame and independent-replicate limitations still apply. The numbered decisions below document the earlier pre-inspection scientific gate.
+
 ## The question we are actually pursuing
 
 Can chiral halide-perovskite excitation produce an **experimentally resolved and reproducible difference in polarized emission/relaxation dynamics**, distinguished from ordinary population decay, sample orientation, interface effects and measurement artifacts?

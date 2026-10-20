@@ -6,7 +6,23 @@ Question: Which experimentally observable optical and optoelectronic responses d
 
 The repository uses real experimental data and keeps source provenance. There is no ML or DFT model at this stage.
 
-## Stage 4 — experimental chiral optical/device control (current)
+## Stage 5 — chiral superfluorescence: one-figure dynamics reproduction
+
+The Nature 2026 study by Wei et al. provides usable time-resolved polarized emission traces of **SMBA and RMBA chiral quasi-2D superlattices**, unlike the static spin-LED data and the nonchiral Cambridge control. Its [Fig. 3 source workbook](https://www.nature.com/articles/s41586-026-10637-x) has 1,399 delay points, paired polarization channels and a separate DCP-versus-fluence cross-check. We reproduced the authors' peak DCP signs and magnitudes: **SMBA +13.49%**, **RMBA -13.76%** (raw source arrays), agreeing with Fig. 3d near 300 µJ cm^-2. Changes under different pre-burst background choices are small.
+
+The RMBA source sheet has a duplicated 'LCP' header for its second channel. The paper's spectroscopy convention and Fig. 3d support the expected opposite-helicity interpretation, which is flagged rather than silently assumed. Instrument resolution is about 10 ps despite 0.35 ps source-array spacing. This is a successful **published-result reproduction**, not a new spin lifetime or mechanism.
+
+Run:
+```powershell
+python -m pip install -e ".[dev,viz]"
+python -m chiral_perovskites.nature_sf_pilot fetch
+python -m chiral_perovskites.nature_sf_pilot analyze
+python -m pytest -q
+```
+
+See [focused study and decision](docs/nature2026_sf_pilot.md), [reproduced figure](results/nature2026_sf_fig3c_reproduction.png) and [numerical audit](results/nature2026_sf_fig3c_audit.json). The original XLSX is downloaded from the publisher and ignored by Git. We have completed the single-figure replication; no model expansion is authorized by these data alone.
+
+## Stage 4 — experimental chiral optical/device control (completed)
 
 An unexpectedly useful open dataset comes from Hautzinger et al., *Nature* **631**, 307–312 (2024), [doi:10.1038/s41586-024-07560-4](https://doi.org/10.1038/s41586-024-07560-4), [raw OSF archive](https://doi.org/10.17605/OSF.IO/2M35K).
 
@@ -25,7 +41,7 @@ Derived plots and a source-hashed report are saved under `results/osf_chiral_*`.
 
 ## Stage 3 — exciton and polarization dynamics (data-access gate)
 
-Before developing a kinetic mechanism, we audited availability of original, **matched R/S time-resolved polarization measurements**. See [data feasibility and acceptance criteria](docs/dynamics-data-feasibility.md). No complete downloadable R/S counterpart with independently verified timing/channel metadata has been secured yet.
+Before developing a kinetic mechanism, we audited availability of original, **matched R/S time-resolved polarization measurements**. See [data feasibility and acceptance criteria](docs/dynamics-data-feasibility.md). Stage 5 has now recovered publisher-supplied R/S time-resolved source arrays; the remaining gap is independent raw camera frames, explicit channel-2 identity correction and sample-level calibration/replicates.
 
 As a **nonchiral methodological control**, we downloaded a plain-text polarization-resolved transient absorption dataset associated with Bourelle et al., *Nano Letters* (2020), [doi:10.1021/acs.nanolett.0c00867](https://doi.org/10.1021/acs.nanolett.0c00867), Cambridge [CAM.54010](https://doi.org/10.17863/CAM.54010). The published article identifies the studied material as BA2FAPb2I7.
 

@@ -17,6 +17,12 @@ A fit to a single exponential is **not** automatically a spin-flip lifetime. Car
 
 The publication URLs are discovery references. **Only the Bourelle dataset's selected plain-text trace has been inspected numerically in this repository.** The data access labels distinguish a DOI/article from independently machine-readable matched kinetics.
 
+## Additional matched chiral source data now verified
+
+Wei et al., *Nature* 654 (2026), [DOI 10.1038/s41586-026-10637-x](https://doi.org/10.1038/s41586-026-10637-x), provide original **figure-source** LCP/second-helicity time-resolved traces for R/S-MBA-derived quasi-2D superlattices (Fig. 3c; 1,399 paired delays; 300 µJ cm^-2). We independently reproduced the published opposite-signed peak DCP at +13.49% / -13.76%. See [bounded reproduction and limits](nature2026_sf_pilot.md).
+
+This clears the gate for a single published-result reproduction, **not** for a new spin/exciton lifetime mechanism. Individual raw camera image frames, independent fabrication batches and calibrated IRF measurements remain unavailable. The publisher's RMBA column 2 has a duplicated LCP header and is tracked as a source-label ambiguity.
+
 ## Actual audit performed
 
 Cambridge open archive DOI 10.17863/CAM.54010 provides `FAI_575nm_20uW_Co_Cnt_Kinetics_552-557_574-579_590-595.txt` (exact source basename). The file has:
