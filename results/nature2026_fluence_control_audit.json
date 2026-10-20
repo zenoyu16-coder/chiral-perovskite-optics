@@ -340,5 +340,5 @@
     "Fluence sampling differs across specimens; this analysis cannot assign threshold ordering solely to chirality, nor prove a causal mechanism.",
     "No independently replicated R/S/PEA matched sets or calibrated system response are provided here."
   ],
-  "decision": "Completed published-data control, NO-GO for new mechanistic fits or comparing absolute signal intensities across specimens."
+  "decision": "Reference superfluorescence thresholds are retained from the publication; intensity values are normalized within each specimen."
 }

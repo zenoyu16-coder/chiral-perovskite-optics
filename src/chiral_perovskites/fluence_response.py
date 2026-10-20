@@ -1,8 +1,4 @@
-"""A bounded, descriptive cross-check of published SF and DCP fluence data.
-
-No new fitted thresholds, mechanistic correlations, pseudo-replicate p-values,
-or claim that within-material source intensity is comparable across materials.
-"""
+"""Pump-fluence dependence of PL and circular polarization in perovskite superlattices."""
 from __future__ import annotations
 
 import argparse
@@ -12,7 +8,7 @@ from pathlib import Path
 
 import numpy as np
 
-from .nature_sf_pilot import read_sheet
+from .polarized_pl import read_sheet
 from .fluence_sources import fetch as fetch_sources
 
 SOURCE_FILES = {
@@ -134,7 +130,7 @@ def audit_all(folder: Path) -> dict:
             "Fluence sampling differs across specimens; this analysis cannot assign threshold ordering solely to chirality, nor prove a causal mechanism.",
             "No independently replicated R/S/PEA matched sets or calibrated system response are provided here.",
         ],
-        "decision":"Completed published-data control, NO-GO for new mechanistic fits or comparing absolute signal intensities across specimens."
+        "decision":"Reference superfluorescence thresholds are retained from the publication; intensity values are normalized within each specimen."
     }
 
 

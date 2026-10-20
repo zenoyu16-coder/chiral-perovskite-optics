@@ -1,4 +1,4 @@
-"""Download only specified CIF entries; no untrusted ZIP extraction."""
+"""CIF download and source-manifest handling."""
 from __future__ import annotations
 
 import csv

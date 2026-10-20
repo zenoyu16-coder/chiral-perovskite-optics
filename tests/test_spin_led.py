@@ -2,7 +2,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from chiral_perovskites.chiral_device_pilot import (
+from chiral_perovskites.spin_led import (
     rows_tsv, numeric_pair, consistency_metrics, device_metrics, duplicate_numeric_tables
 )
 
@@ -59,7 +59,7 @@ def test_device_sign_count_and_no_r_s_mapping():
     report=device_metrics(rows)
     assert report["opposite_sign_rows"]==1
     assert report["n_current_rows"]==2
-    assert "NOT confirmed" in report["raw_channel_assignment"]
+    assert "unidentified" in report["raw_channel_assignment"]
 
 
 def test_exact_repeat_detection_ignores_delimiter_style(tmp_path):

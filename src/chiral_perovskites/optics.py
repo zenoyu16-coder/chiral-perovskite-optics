@@ -1,4 +1,4 @@
-"""Independent optical dataset audit (2025 thin film; NOT 2020 crystal data)."""
+"""Front/back circular-dichroism data from S-NEA2PbBr4 thin films."""
 from __future__ import annotations
 
 import hashlib
@@ -67,7 +67,7 @@ def compare_front_back(front: np.ndarray, back: np.ndarray, deposited: np.ndarra
         "max_abs_deposited_minus_mean_mdeg": float(np.abs(from_mean).max()),
         "rmse_deposited_minus_sum_mdeg": float(np.sqrt(np.mean(from_sum ** 2))),
         "rmse_deposited_minus_mean_mdeg": float(np.sqrt(np.mean(from_mean ** 2))),
-        "note": "Deposited third trace numerically resembles front+back, not (front+back)/2. This may reflect an unrecorded scaling convention; do not label this a publication error without inspecting original processing.",
+        "note": "The archived combined curve agrees with front+back within rounding; the original normalization convention is unspecified.",
     }
     data = [
         {"wavelength_nm":float(w), "cd_front_mdeg":float(f), "cd_back_mdeg":float(b),

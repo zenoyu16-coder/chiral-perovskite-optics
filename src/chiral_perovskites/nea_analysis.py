@@ -1,4 +1,4 @@
-"""Stage 2: reproducible R/S/rac structure analysis and independent CD archive audit."""
+"""NEA2PbBr4 crystal geometry and thin-film CD measurements."""
 from __future__ import annotations
 
 import argparse

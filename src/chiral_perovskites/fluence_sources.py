@@ -1,7 +1,4 @@
-"""Pin original Nature 2026 XLSX source workbooks by SHA-256.
-
-Raw files are downloaded locally and are not redistributed with this repo.
-"""
+"""Download and verify the published superfluorescence source workbooks."""
 from __future__ import annotations
 
 import hashlib

@@ -1,8 +1,4 @@
-"""Reproducible optical-vs-device signal audit for published chiral spin LEDs.
-
-This is a DATA-LEVEL parity/consistency check. No spin lifetime, transport
-efficiency or microscopic CISS mechanism is inferred from these plots.
-"""
+"""Absorption, CD and electroluminescence polarization in chiral spin-LEDs."""
 from __future__ import annotations
 
 import argparse
@@ -100,8 +96,8 @@ def consistency_metrics(rows: list[dict]) -> dict:
         "cd_antisymmetry_residual_ratio": mismatch,
         "abs_R_S_pearson": abs_corr,
         "abs_relative_l2_difference": float(np.linalg.norm(r_abs - s_abs) / scale),
-        "unit_note": "CD raw file does not specify units; do not assert mdeg from this file alone.",
-        "caution": "Continuous wavelength points are correlated; no hypothesis-test p-values. R/S are not paired device specimens.",
+        "unit_note": "The raw CD header does not specify measurement units.",
+        "caution": "Wavelength samples are correlated; the optical and device datasets do not establish same-specimen pairing.",
     }
 
 
@@ -128,8 +124,8 @@ def device_metrics(rows: list[dict]) -> dict:
         "source_columns": ["current1M", "polarization", "polarization1", "error", "error1"],
         "n_current_rows": len(vals),
         "opposite_sign_rows": opposite,
-        "raw_channel_assignment": "A=polarization, B=polarization1; direct association to R/S NOT confirmed by TSV alone.",
-        "uncertainty_note": "error/error1 may be instrumental or sample scatter; do not infer statistical significance without caption/method metadata",
+        "raw_channel_assignment": "A=polarization, B=polarization1; corresponding enantiomers are unidentified in the TSV.",
+        "uncertainty_note": "The file does not define the statistical meaning of error/error1.",
         "rows": vals,
     }
 

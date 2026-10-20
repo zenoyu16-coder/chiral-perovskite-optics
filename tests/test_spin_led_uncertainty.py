@@ -1,4 +1,4 @@
-from chiral_perovskites.spin_led_gate import (
+from chiral_perovskites.spin_led_uncertainty import (
     distinguish_sign, audit_sign_evidence
 )
 
@@ -31,4 +31,4 @@ def test_count_is_not_all_6_significant():
     assert report["opposite_raw_sign_rows"] == 5
     assert report["both_signs_exclude_zero_at_1x_reported_error"] == 3
     assert report["both_signs_exclude_zero_at_2x_reported_error"] == 2
-    assert "NOT a confidence level" in report["interpretation_limit"]
+    assert "without defining statistical confidence" in report["interpretation_limit"]

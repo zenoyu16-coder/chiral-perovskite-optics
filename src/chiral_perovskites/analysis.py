@@ -1,4 +1,4 @@
-"""CIF-derived structural descriptors; these are NOT measures of optical chirality."""
+"""Octahedral geometry and symmetry descriptors from experimental CIFs."""
 from __future__ import annotations
 
 import hashlib
@@ -84,7 +84,7 @@ def describe_cif(path: Path, symprec: float = 0.05, cutoff_A: float = 3.7) -> di
         raise ValueError(f"No Pb sites in {path.name}")
     analyzer = SpacegroupAnalyzer(structure, symprec=symprec)
     ops = analyzer.get_symmetry_operations(cartesian=False)
-    # Proper rotations only = Sohncke group. This does NOT assign R or S.
+    # Sohncke-group classification uses the rotation parts of the symmetry operations.
     sohncke = all(np.linalg.det(op.rotation_matrix) > 0 for op in ops)
     bond_metrics, skipped = pb_i_octahedra(structure, cutoff_A=cutoff_A)
     result = {

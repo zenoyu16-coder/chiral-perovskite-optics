@@ -5,7 +5,7 @@ import zipfile
 import numpy as np
 import pytest
 
-from chiral_perovskites.fluence_gate import positive_pair, dcp_exclusion_points
+from chiral_perovskites.fluence_response import positive_pair, dcp_exclusion_points
 from chiral_perovskites.fluence_sources import validate_xlsx
 
 

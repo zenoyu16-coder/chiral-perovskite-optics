@@ -1,4 +1,4 @@
-"""CLI: fetch source structures and compute traceable geometry summaries."""
+"""Temperature-dependent S-MBA2PbI4 crystal structure analysis."""
 from __future__ import annotations
 
 import argparse
@@ -11,7 +11,7 @@ from .data import fetch_sources
 
 
 def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(description="Chiral perovskite structure-first pilot")
+    parser = argparse.ArgumentParser(description="S-MBA2PbI4 crystallographic temperature series")
     parser.add_argument("command", choices=["fetch", "analyze"])
     parser.add_argument("--manifest", type=Path, default=Path("data/sources.csv"))
     parser.add_argument("--data-dir", type=Path, default=Path("data/raw"))

@@ -1,8 +1,4 @@
-"""Reproduce *one* chiral-superfluorescence result from Nature 2026 Source Data Fig. 3.
-
-No new exciton, spin or superfluorescence kinetics model. Data are figure
-source arrays, not independently acquired raw camera frames.
-"""
+"""Polarization-resolved transient emission from chiral perovskite superlattices."""
 from __future__ import annotations
 
 import argparse
@@ -252,10 +248,10 @@ def analyze(source:Path, report:Path, plot:Path) -> dict:
             "0.3495 ps numerical delay spacing is not independent ~10 ps camera resolution.",
             "No independent acquisition replicates or R/S sample-matched calibration/IRF files here.",
             "Bright-gate contrast vs time is descriptive; not a spin or exciton polarization lifetime.",
-            "Cannot infer new collective emission mechanism from the author's already published reproduction.",
+            "The fitted mechanisms are discussed in the original study.",
         ],
         "samples":samples,
-        "decision":"GO for one-figure reproducible observation; STOP before microscopic model without independent condition/replicate evidence",
+        "decision":"Peak circular polarization reproduced from the publisher figure arrays; microscopic rate analysis requires independently calibrated measurements.",
     }
     plot_one_reproduction(t,s,r,plot)
     report.parent.mkdir(parents=True,exist_ok=True)

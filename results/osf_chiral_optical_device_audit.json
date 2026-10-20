@@ -38,8 +38,8 @@
     "cd_antisymmetry_residual_ratio": 0.5359986622155556,
     "abs_R_S_pearson": 0.9991767223425396,
     "abs_relative_l2_difference": 0.08374456036915956,
-    "unit_note": "CD raw file does not specify units; do not assert mdeg from this file alone.",
-    "caution": "Continuous wavelength points are correlated; no hypothesis-test p-values. R/S are not paired device specimens."
+    "unit_note": "The raw CD header does not specify measurement units.",
+    "caution": "Wavelength samples are correlated; the optical and device datasets do not establish same-specimen pairing."
   },
   "device": {
     "source_columns": [
@@ -51,8 +51,8 @@
     ],
     "n_current_rows": 6,
     "opposite_sign_rows": 6,
-    "raw_channel_assignment": "A=polarization, B=polarization1; direct association to R/S NOT confirmed by TSV alone.",
-    "uncertainty_note": "error/error1 may be instrumental or sample scatter; do not infer statistical significance without caption/method metadata",
+    "raw_channel_assignment": "A=polarization, B=polarization1; corresponding enantiomers are unidentified in the TSV.",
+    "uncertainty_note": "The file does not define the statistical meaning of error/error1.",
     "rows": [
       {
         "current_from_column_1": 15.0,

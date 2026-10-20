@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use the analysis code, please cite this repository and the original studies supplying experimental data."
+title: "Chirality and polarization in layered halide perovskites"
+type: software
+authors:
+  - family-names: Yu
+    given-names: Min-Chun
+repository-code: "https://github.com/zenoyu16-coder/chiral-perovskite-optics"
+license: MIT

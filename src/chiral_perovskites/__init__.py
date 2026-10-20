@@ -1,3 +1,3 @@
-"""Small, provenance-aware tools for structural analysis of chiral perovskites."""
+"""Analysis of crystal structures and polarization-resolved perovskite spectroscopy."""
 
 __version__ = "0.1.0"

@@ -1,0 +1,69 @@
+{
+  "description": "SHA-256 fingerprints of published-data analyses",
+  "files": {
+    "cd_front_back_audit.json": {
+      "sha256": "8cdc33787937dde6d9795ee040dc5cee8b9ef8188309eb2e199441defb5a398a",
+      "bytes": 618
+    },
+    "cd_front_back_comparison.csv": {
+      "sha256": "2de5fb3603c6a2e898ff5f23339cbeb5220ce1b772d002f653b23db783839e0b",
+      "bytes": 14990
+    },
+    "dynamics_cambridge_channels.png": {
+      "sha256": "beb2bfca44f0ba683df181760d1cd81eda0a9b11b867bbf3e17aff84497052c7",
+      "bytes": 138259
+    },
+    "dynamics_cambridge_qa.json": {
+      "sha256": "34d4384927f3b9da484f90c81e41d61e30a9973df473639d6b0d2e8c0170c375",
+      "bytes": 3326
+    },
+    "nature2026_fluence_control.png": {
+      "sha256": "5a5a09f6ec64b685b2aca6e8b90946d6300a0d48f1aec1c72d0a7ffd9a2d5330",
+      "bytes": 134793
+    },
+    "nature2026_fluence_control_audit.json": {
+      "sha256": "68c02582958226a44ec065f56e34accff19269a819d23d7718c2ee95ce006023",
+      "bytes": 9943
+    },
+    "nature2026_sf_fig3c_audit.json": {
+      "sha256": "ca1cd89cd0600642c3c311df697b0dd5f20eee146474c0476b5f079cb9be0ee6",
+      "bytes": 3870
+    },
+    "nature2026_sf_fig3c_reproduction.png": {
+      "sha256": "e0edb4e432521b5407d7ad3d8e59f6eafef5e47d3fe820f96e67c5cfe21c0c34",
+      "bytes": 188531
+    },
+    "nea_matched_298K.csv": {
+      "sha256": "fe014977afdfebbc004e553476dc1cb873492fd8c5e7fbd81458e2e4acad1c6c",
+      "bytes": 1169
+    },
+    "nea_matched_sensitivity.csv": {
+      "sha256": "19df3c0c9a834f9f734d3c986e6456e2fdd83e082e760b608059fc97a2f7baf5",
+      "bytes": 1169
+    },
+    "osf_chiral_cd_abs_pair.png": {
+      "sha256": "8e06c029b9d1949ebe5c07fbd29a633b48a648f667a40e5f4ae51d9737b27a8d",
+      "bytes": 166005
+    },
+    "osf_chiral_device_docp.png": {
+      "sha256": "89d7f9b72ed4726e980b5ca2a0af25788fc9729ffa5ce985117b8a89d3fd2f7e",
+      "bytes": 81923
+    },
+    "osf_chiral_optical_device_audit.json": {
+      "sha256": "f0b93d74904f54206c1d4f74852b2227c63f17b166c5c34d1a7ba4b176f24bda",
+      "bytes": 3306
+    },
+    "sensitivity_symprec_0p01.csv": {
+      "sha256": "1e101ccc33b233eafd2aba0683b5388f11c49563b85032962019ffad007e3bae",
+      "bytes": 1199
+    },
+    "spin_led_uncertainty_gate.json": {
+      "sha256": "50f777e81eebdaf4a0270e31205bb5b0a0966a7ef33068c33674cc71ea14c9fb",
+      "bytes": 3729
+    },
+    "temperature_summary.csv": {
+      "sha256": "4c35ba9873dcff81d777d97816020b020765dba37c0e9ce4531bcb28d68e80bc",
+      "bytes": 1199
+    }
+  }
+}

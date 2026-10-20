@@ -1,8 +1,4 @@
-﻿"""Matched 298 K R/S/rac NEA2PbBr4 experimental CIF comparison.
-
-The scalar geometry metrics are even under mirror reflection; they
-cannot assign the sign or magnitude of optical activity.
-"""
+"""Structural comparison of deposited R/S/rac NEA2PbBr4 crystals."""
 from __future__ import annotations
 
 import hashlib

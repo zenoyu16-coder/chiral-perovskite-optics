@@ -17,7 +17,7 @@
     "X"
   ],
   "channel_assignment": "NOT independently verified as co/counter-circular from file header; source filename includes Co_Cnt",
-  "scientific_limit": "Does not contain enantiomers and cannot establish spin relaxation or a chirality effect. Baseline and early/late averages are descriptive only.",
+  "scientific_limit": "Nonchiral reference material; measured channel amplitudes and temporal windows are descriptive.",
   "channels": [
     {
       "index_1based": 1,

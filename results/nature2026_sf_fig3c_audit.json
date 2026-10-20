@@ -31,7 +31,7 @@
     "0.3495 ps numerical delay spacing is not independent ~10 ps camera resolution.",
     "No independent acquisition replicates or R/S sample-matched calibration/IRF files here.",
     "Bright-gate contrast vs time is descriptive; not a spin or exciton polarization lifetime.",
-    "Cannot infer new collective emission mechanism from the author's already published reproduction."
+    "The fitted mechanisms are discussed in the original study."
   ],
   "samples": {
     "SMBA": {
@@ -107,5 +107,5 @@
       "raw_dcp0_minus_fig3d_fraction": -0.0009917002601148583
     }
   },
-  "decision": "GO for one-figure reproducible observation; STOP before microscopic model without independent condition/replicate evidence"
+  "decision": "Peak circular polarization reproduced from the publisher figure arrays; microscopic rate analysis requires independently calibrated measurements."
 }

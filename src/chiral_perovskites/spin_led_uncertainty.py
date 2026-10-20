@@ -1,15 +1,11 @@
-"""Bounded audit of Fig. 2c source-series signs and reported uncertainty bars.
-
-No assumption that the quoted source 'error' equals a standard deviation,
-and no assignment of A/B channels to R/S based solely on a TSV.
-"""
+"""Source-data error-bar comparison for circularly polarized electroluminescence."""
 from __future__ import annotations
 
 import argparse
 import json
 from pathlib import Path
 
-from .chiral_device_pilot import rows_tsv, device_metrics
+from .spin_led import rows_tsv, device_metrics
 
 DEFAULT_SOURCE = Path("data/raw/osf_2m35k/Fig_2c_current_vs_DOCP.txt")
 DEFAULT_OUTPUT = Path("results/spin_led_uncertainty_gate.json")
@@ -57,15 +53,15 @@ def audit_sign_evidence(rows: list[dict]) -> dict:
             row["both_signs_survive_2x_error"] for row in details
         ),
         "interpretation_limit": (
-            "Excluding zero by 1x/2x a figure error bar is an arithmetic sensitivity "
-            "check, NOT a confidence level, test of independent replicates or evidence "
-            "for chirality causality. Source error meaning is unverified."
+            "Source-error multipliers provide an arithmetic sign-sensitivity "
+            "comparison, without defining statistical confidence or independent device "
+            "replication; the source error-bar definition is unspecified."
         ),
         "identity_limit": (
             "Source TSV has columns polarization/polarization1 without enantiomer labels. "
             "The accessible arXiv manuscript 2309.04559 contains an apparent inconsistency "
             "between equation/panel labels and the handedness-sign prose near Fig. 2. "
-            "Do not resolve by guessing; verify the version of record."
+            "The R/S mapping requires confirmation from the published version."
         ),
         "samples_limit": (
             "These are repeated current measurements of specific devices, not six "

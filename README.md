@@ -1,137 +1,66 @@
-# Chiral Perovskite Optics
+# Chirality and polarization in layered halide perovskites
 
-Experimental-crystal-structure and spectroscopy exploration of chiral layered halide perovskites.
+Organic chiral cations can alter the symmetry of layered halide perovskites and the polarization of their optical response. This repository examines published crystal structures, circular dichroism, polarized emission and time-resolved measurements to distinguish structural chirality from the optical and device signals associated with it.
 
-Question: Which experimentally observable optical and optoelectronic responses depend on molecular handedness, and which controls are needed before relating those signals to exciton or spin dynamics?
+The work uses experimental datasets from several studies. The central analysis concerns R/S and achiral perovskite superlattices; single-crystal geometry and chiral spin-LED measurements provide separate comparisons. Results are reproductions and data checks of published experiments, with no new physical mechanism claimed.
 
-The repository uses real experimental data and keeps source provenance. There is no ML or DFT model at this stage.
+## Circularly polarized superfluorescence
 
-## Stage 6 — chiral/achiral fluence control (completed)
+Wei et al., [*Nature* 654 (2026) 369–374](https://doi.org/10.1038/s41586-026-10637-x), measured polarization-resolved emission from quasi-two-dimensional perovskite superlattices containing R- or S-MBA spacers. Their Fig. 3 source data include paired emission channels over 1,399 delays and a separate fluence-dependent polarization series.
 
-Verified publisher source workbooks for the SMBA, RMBA and achiral PEA superlattices, including pump-dependent peak PL intensity and separate S/R peak circular-polarization data. The nonchiral PEA sample also exhibits superfluorescence; circularly polarized superfluorescence is only established for R/S in the paper. We compare within-sample intensity *shape* and reported DCP values, without fitting new thresholds or treating different specimens as independent controls for causation.
+![Reproduced time-resolved emission and circular polarization from published source data](results/nature2026_sf_fig3c_reproduction.png)
 
-Published time-integrated PL SF thresholds: S 70±10, R 95±10, PEA 140±10 µJ/cm². Under a transparent 2x source-propagated-error arithmetic rule, first nonzero deposited DCP values occur at 95.4 (S) and 134.66 (R) µJ/cm². These are not newly measured thresholds. Raw ED7a has a nominal RMBA 85 µJ/cm² series whereas ED7b lists 82 µJ/cm²; their rows are **not blindly joined**.
+The degree of circular polarization at the peak of the total emission is +13.49% for the S-MBA sample and −13.76% for R-MBA, calculated directly from the deposited time traces. Subtracting the mean pre-burst background changes these to +13.52% and −13.81%. These values agree with the paper's Fig. 3d measurements near 300 µJ cm⁻².
 
-```powershell
+The corresponding fluence data provide an achiral PEA control. Superfluorescence occurs in all three superlattices, while the reported circularly polarized superfluorescence is specific to the chiral samples.
+
+![Pump-fluence dependence of superfluorescence and circular polarization](results/nature2026_fluence_control.png)
+
+The authors report the following superfluorescence thresholds from time-integrated photoluminescence:
+
+| Superlattice | Published threshold (µJ cm⁻²) |
+| --- | ---: |
+| S-MBA | 70 ± 10 |
+| R-MBA | 95 ± 10 |
+| PEA (achiral) | 140 ± 10 |
+
+The left panel compares each source intensity series relative to its own first measurement. The measured intensities are in arbitrary units and have not been calibrated for comparison across different samples. The right panel shows the deposited R/S peak-polarization data and reported errors.
+
+[Polarized-emission analysis](docs/methods.md) · [Numerical results](docs/results.md) · [Fig. 3 audit](results/nature2026_sf_fig3c_audit.json) · [Fluence source audit](results/nature2026_fluence_control_audit.json)
+
+## Optical and structural comparisons
+
+Hautzinger et al., [*Nature* 631 (2024) 307–312](https://doi.org/10.1038/s41586-024-07560-4), published R/S-MBA perovskite absorption and CD spectra together with circularly polarized electroluminescence from spin-LEDs employing AlGaInP quantum wells.
+
+![R/S-MBA absorption and circular dichroism from the OSF deposit](results/osf_chiral_cd_abs_pair.png)
+
+Across the deposited wavelengths, the R/S absorption spectra have a Pearson correlation of 0.9992; the CD spectra give −0.8752. The two device-polarization series have opposite signs at six reported current settings. The source file does not identify the handedness of each device-polarization column, so the analysis retains the original channel labels. The quantum-well emission is considered separately from intrinsic perovskite photoluminescence.
+
+Jana et al., [*Nature Communications* 11 (2020) 4699](https://doi.org/10.1038/s41467-020-18485-7), deposited R-, S- and racemic NEA₂PbBr₄ crystal structures at 298 K. The R/S structures are assigned to `P2₁`; the racemic structure is `P2₁/c`. The project also contains a 100–298 K series for S-MBA₂PbI₄. Local octahedral geometry is reported alongside symmetry, without using a crystallographic axis-dependent displacement sign as an absolute handedness label.
+
+[Experimental structures](results/nea_matched_298K.csv) · [Structural methods](docs/methods.md)
+
+## Reproducibility
+
+Requires Python 3.10 or later. Raw CIF and spectroscopy files are downloaded from their original repositories and are excluded from Git; source identifiers and checksums are stored with the derived results.
+
+```bash
 python -m pip install -e ".[dev,viz]"
-python -m chiral_perovskites.fluence_gate --fetch
-python -m chiral_perovskites.fluence_gate
+
+# Download source files and regenerate analyses
+python scripts/reproduce.py --fetch
+
+# Run the unit tests and verify recorded output fingerprints
 python -m pytest -q
+python scripts/verify_results.py
 ```
 
-See [science outcome and limitations](docs/nature2026_fluence_controls.md), [control chart](results/nature2026_fluence_control.png), and [machine-readable source audit](results/nature2026_fluence_control_audit.json). The original publisher workbooks remain git-ignored. This completes the current public-data research pilot; no new DFT, ML, or kinetic mechanisms follow from the published source arrays.
+To regenerate results without downloading, run `python scripts/reproduce.py` after obtaining the original input files. The individual analysis modules are listed in [Methods](docs/methods.md).
 
-## Stage 5 — chiral superfluorescence: one-figure dynamics reproduction
+The repository contains Python analysis code in `src/chiral_perovskites/`, tests in `tests/`, selected figures and tables in `results/`, and the corresponding source inventory in [data/README.md](data/README.md). The [results manifest](results/manifest.json) records hashes for the committed outputs.
 
-The Nature 2026 study by Wei et al. provides usable time-resolved polarized emission traces of **SMBA and RMBA chiral quasi-2D superlattices**, unlike the static spin-LED data and the nonchiral Cambridge control. Its [Fig. 3 source workbook](https://www.nature.com/articles/s41586-026-10637-x) has 1,399 delay points, paired polarization channels and a separate DCP-versus-fluence cross-check. We reproduced the authors' peak DCP signs and magnitudes: **SMBA +13.49%**, **RMBA -13.76%** (raw source arrays), agreeing with Fig. 3d near 300 µJ cm^-2. Changes under different pre-burst background choices are small.
+## Experimental follow-up
 
-The RMBA source sheet has a duplicated 'LCP' header for its second channel. The paper's spectroscopy convention and Fig. 3d support the expected opposite-helicity interpretation, which is flagged rather than silently assumed. Instrument resolution is about 10 ps despite 0.35 ps source-array spacing. This is a successful **published-result reproduction**, not a new spin lifetime or mechanism.
+The open data establish reproducible comparisons of published observations. Testing how handedness affects polarization retention would require matched R/S/achiral samples, independent fabrication batches, polarization-resolved time traces, and instrument-response and orientation controls. These measurements are not part of the current repository.
 
-Run:
-```powershell
-python -m pip install -e ".[dev,viz]"
-python -m chiral_perovskites.nature_sf_pilot fetch
-python -m chiral_perovskites.nature_sf_pilot analyze
-python -m pytest -q
-```
-
-See [focused study and decision](docs/nature2026_sf_pilot.md), [reproduced figure](results/nature2026_sf_fig3c_reproduction.png) and [numerical audit](results/nature2026_sf_fig3c_audit.json). The original XLSX is downloaded from the publisher and ignored by Git. We have completed the single-figure replication; no model expansion is authorized by these data alone.
-
-## Stage 4 — experimental chiral optical/device control (completed)
-
-An unexpectedly useful open dataset comes from Hautzinger et al., *Nature* **631**, 307–312 (2024), [doi:10.1038/s41586-024-07560-4](https://doi.org/10.1038/s41586-024-07560-4), [raw OSF archive](https://doi.org/10.17605/OSF.IO/2M35K).
-
-We reproduce R/S-MBA2PbI4 absorbance and CD spectra plus two reported spin-LED DOCP channels without inventing spin lifetimes or assigning unlabeled channel identities. Correctly parsing the ragged optical TSV is critical: it contains **401 CD**, **501 absorption**, and **696 PL** rows on different wavelength axes. The verified optical results give R/S absorbance correlation +0.9992 and CD correlation -0.8752. The two recorded device DOCP series have opposite signs at all 6 tabulated currents, but the TSV by itself does not assign each channel to R or S or establish independent device batches. Two other figure-source files contain exact duplicate numerical values and must not be counted as independent replicates.
-
-See [data audit, limitations and decision gate](docs/spin_led_data_pilot.md).
-
-```powershell
-python -m pip install -e ".[dev,viz]"
-python -m chiral_perovskites.chiral_device_pilot fetch
-python -m chiral_perovskites.chiral_device_pilot analyze
-python -m pytest -q
-```
-
-Derived plots and a source-hashed report are saved under `results/osf_chiral_*`. An additional bounded error-bar sensitivity check is available via `python -m chiral_perovskites.spin_led_gate` (6/6 raw opposite signs, 5/6 at ±1× source error and 4/6 at ±2×; **not** a confidence test). The source data stay untracked under `data/raw/`. This is a **static optical/device control**, while matched chiral time-resolved polarization data remain the unresolved gate. See [science decision checkpoint](docs/science_gate_2026-10-20.md) before expanding this branch.
-
-## Stage 3 — exciton and polarization dynamics (data-access gate)
-
-Before developing a kinetic mechanism, we audited availability of original, **matched R/S time-resolved polarization measurements**. See [data feasibility and acceptance criteria](docs/dynamics-data-feasibility.md). Stage 5 has now recovered publisher-supplied R/S time-resolved source arrays; the remaining gap is independent raw camera frames, explicit channel-2 identity correction and sample-level calibration/replicates.
-
-As a **nonchiral methodological control**, we downloaded a plain-text polarization-resolved transient absorption dataset associated with Bourelle et al., *Nano Letters* (2020), [doi:10.1021/acs.nanolett.0c00867](https://doi.org/10.1021/acs.nanolett.0c00867), Cambridge [CAM.54010](https://doi.org/10.17863/CAM.54010). The published article identifies the studied material as BA2FAPb2I7.
-
-```powershell
-python -m pip install -e ".[dev,viz]"
-python -m chiral_perovskites.dynamics_pilot fetch
-python -m chiral_perovskites.dynamics_pilot audit
-python -m pytest -q
-```
-
-This stage parses 312 time points and six deposition-labeled channels, checks baseline/noise, and plots traces. Results: `results/dynamics_cambridge_qa.json` and `results/dynamics_cambridge_channels.png`. Neither a spin lifetime nor a chiral effect is inferred from this archive. The next gate is access to a properly documented R/S or matched chiral/rac sample-level kinetic dataset.
-
-## Stage 2 — matched NEA2PbBr4 (current)
-
-We use original 298 K single-crystal CIFs from Jana et al., *Nature Communications* 11, 4699 (2020), doi: [10.1038/s41467-020-18485-7](https://doi.org/10.1038/s41467-020-18485-7):
-
-| Sample | Duke ID | CCDC | Space group | Pb-Br mean (Å) | cis-angle variance (deg²) | Br-centroid shift along b (Å) |
-|---|---:|---:|---|---:|---:|---:|
-| S-NEA2PbBr4 | 1583 | 2015618 | P21 | 3.0344 | 40.173 | -0.034525 |
-| R-NEA2PbBr4 | 1584 | 2015620 | P21 | 3.0366 | 40.467 | +0.034830 |
-| rac-NEA2PbBr4 | 1588 | 2015614 | P21/c | 3.0267 | 19.749 | ~0 |
-
-The signed quantity is the mean over Pb sites of the projected vector from Pb to the centroid of its six nearest Br neighbors. It uses the **deposited cell's positive b-axis**, not an independently fixed laboratory direction. The R/S sign reversal agrees with a polar-distortion motif discussed by Sercel et al. (2025); it is **not** a Berry-phase polarization or a quantitative CD prediction.
-
-The raw racemic CIF gives **P21/c (No. 14)**, as confirmed from the file and symmetry analysis; this is the structure actually evaluated. The comparison uses separate crystals, so small R/S metric differences include experimental variation.
-
-See [stage 2 interpretation and limitations](docs/nea-pilot.md).
-
-### Reproduce
-
-Python >=3.10:
-
-```powershell
-python -m pip install -e ".[dev]"
-python -m chiral_perovskites.pilot2 matched-fetch
-python -m chiral_perovskites.pilot2 matched-analyze
-python -m pytest -q
-```
-
-Expected output: `results/nea_matched_298K.csv`. Use `--symprec 0.01` to repeat the space-group analysis at a tighter symmetry tolerance.
-
-Raw CIFs are downloaded from Duke HybriD3 and are excluded from Git. `data/nea_sources.csv` records dataset, DOI, temperature, handedness and CCDC identifiers.
-
-## Stage 2 — separate optical archive audit
-
-An independent dataset from Sercel et al., *Advanced Materials* 37, 2415901 (2025), [doi:10.1002/adma.202415901](https://doi.org/10.1002/adma.202415901), contains measured front-side, back-side and a third “average” CD spectrum for a **S-NEA2PbBr4 thin film**, plus absorbance.
-
-```powershell
-python -m chiral_perovskites.pilot2 optical-fetch
-python -m chiral_perovskites.pilot2 optical-audit
-```
-
-The 301 spectral points span 300–600 nm. The downloaded third CD trace is numerically equal to the **sum** of front and back curves (maximum deviation ~0.00008 mdeg), rather than their arithmetic mean. The archive may reflect a factor-of-two processing or plotting convention; this is an **unresolved metadata/normalization question**, not evidence of erroneous physics. Both the archived curve and a separately reconstructed arithmetic mean are retained, without overwriting either.
-
-These 2025 film spectra do not refer to the same single crystals as the 2020 CIFs. Do not join them into a sample-level predictor.
-
-Outputs: `results/cd_front_back_audit.json` and `results/cd_front_back_comparison.csv`.
-
-## Stage 1 — S-MBA2PbI4 temperature series
-
-The initial pilot used S-MBA2PbI4 single-crystal structures at 298, 200 and 100 K (Duke IDs 1585–1587; same 2020 paper). It measures volume per Pb, Pb-I bond lengths and octahedral distortion:
-
-```powershell
-chiral-pv fetch
-chiral-pv analyze
-```
-
-Output: `results/temperature_summary.csv`. This series has only S structures; it is **not** an R/S comparison.
-
-## Next questions
-
-- Which structural handedness or polar-displacement quantity is invariant to a change of crystallographic axis setting, and how should its sign be established?
-- How were front/back CD spectra combined in the 2025 dataset? Can we reproduce the displayed figure with documented scale factors?
-- After excluding morphology-related apparent CD contributions, what optical signal remains, and can a simple physically defined geometric observable explain its sign?
-
-We will only consider DFT or ML if a specific observation requires it.
-
-Data license and credit: [Duke HybriD3](https://materials.hybrid3.duke.edu/). The analysis code is MIT licensed.
+[Experimental considerations](docs/experimental-follow-up.md) · [Data sources](data/README.md) · [License](LICENSE) · [Citation](CITATION.cff)

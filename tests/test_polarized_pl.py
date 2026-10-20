@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from chiral_perovskites.nature_sf_pilot import (
+from chiral_perovskites.polarized_pl import (
     _column_index, read_sheet, fig3c_arrays, fig3d_reference, peak_and_gate
 )
 

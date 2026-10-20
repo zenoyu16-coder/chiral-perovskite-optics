@@ -1,5 +1,7 @@
-# Experimental source CIF/ZIP files are retrieved from their original host.
+# Original experimental files are downloaded separately.
 data/raw/
+
+# Python and local environments
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -7,4 +9,7 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+
+# Editor and OS files
 .DS_Store
+Thumbs.db

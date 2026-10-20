@@ -5,8 +5,8 @@
   "opposite_raw_sign_rows": 6,
   "both_signs_exclude_zero_at_1x_reported_error": 5,
   "both_signs_exclude_zero_at_2x_reported_error": 4,
-  "interpretation_limit": "Excluding zero by 1x/2x a figure error bar is an arithmetic sensitivity check, NOT a confidence level, test of independent replicates or evidence for chirality causality. Source error meaning is unverified.",
-  "identity_limit": "Source TSV has columns polarization/polarization1 without enantiomer labels. The accessible arXiv manuscript 2309.04559 contains an apparent inconsistency between equation/panel labels and the handedness-sign prose near Fig. 2. Do not resolve by guessing; verify the version of record.",
+  "interpretation_limit": "Source-error multipliers provide an arithmetic sign-sensitivity comparison, without defining statistical confidence or independent device replication; the source error-bar definition is unspecified.",
+  "identity_limit": "Source TSV has columns polarization/polarization1 without enantiomer labels. The accessible arXiv manuscript 2309.04559 contains an apparent inconsistency between equation/panel labels and the handedness-sign prose near Fig. 2. The R/S mapping requires confirmation from the published version.",
   "samples_limit": "These are repeated current measurements of specific devices, not six independent fabricated samples; wavelength points are not replicates.",
   "rows": [
     {

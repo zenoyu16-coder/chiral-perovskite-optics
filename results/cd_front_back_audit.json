@@ -14,5 +14,5 @@
   "max_abs_deposited_minus_mean_mdeg": 7.708800000000002,
   "rmse_deposited_minus_sum_mdeg": 8.956473354476176e-06,
   "rmse_deposited_minus_mean_mdeg": 1.598610429871712,
-  "note": "Deposited third trace numerically resembles front+back, not (front+back)/2. This may reflect an unrecorded scaling convention; do not label this a publication error without inspecting original processing."
+  "note": "The archived combined curve agrees with front+back within rounding; the original normalization convention is unspecified."
 }

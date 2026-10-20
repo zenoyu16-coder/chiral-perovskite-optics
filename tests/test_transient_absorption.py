@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from chiral_perovskites.dynamics_pilot import parse, audit
+from chiral_perovskites.transient_absorption import parse, audit
 
 
 def make_data(path: Path, header="\t||\t||\t||\tX\tX\tX") -> None:

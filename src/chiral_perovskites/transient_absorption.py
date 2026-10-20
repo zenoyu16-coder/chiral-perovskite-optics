@@ -1,8 +1,4 @@
-"""Audit a *nonchiral* open polarization-resolved TA kinetics dataset.
-
-This is an instrumentation/data-format learning exercise. Nothing here
-measures an R/S chirality effect or extracts a validated spin lifetime.
-"""
+"""Polarization-resolved transient absorption in a nonchiral layered perovskite."""
 from __future__ import annotations
 
 import argparse
@@ -92,7 +88,7 @@ def audit(arr: np.ndarray, sha256: str) -> dict:
         "pre_pump_count": int(np.sum(t < 0)),
         "valid_source_labels": ["||", "X"],
         "channel_assignment": "NOT independently verified as co/counter-circular from file header; source filename includes Co_Cnt",
-        "scientific_limit": "Does not contain enantiomers and cannot establish spin relaxation or a chirality effect. Baseline and early/late averages are descriptive only.",
+        "scientific_limit": "Nonchiral reference material; measured channel amplitudes and temporal windows are descriptive.",
         "channels": cols,
     }
 
