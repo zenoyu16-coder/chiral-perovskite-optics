@@ -1,0 +1,10 @@
+# Experimental source CIF/ZIP files are retrieved from their original host.
+data/raw/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.egg-info/
+build/
+dist/
+.DS_Store

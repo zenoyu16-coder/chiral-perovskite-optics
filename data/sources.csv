@@ -1,0 +1,4 @@
+id,sample,handedness,temperature_K,doi,dataset_url,cif_name,kind
+1585,S-MBA2PbI4,S,298,10.1038/s41467-020-18485-7,https://materials.hybrid3.duke.edu/materials/datasets/1585/files/,S-MBA2PbI4_298K.cif,single_crystal_xrd
+1586,S-MBA2PbI4,S,200,10.1038/s41467-020-18485-7,https://materials.hybrid3.duke.edu/materials/datasets/1586/files/,S-MBA2PbI4_200K.cif,single_crystal_xrd
+1587,S-MBA2PbI4,S,100,10.1038/s41467-020-18485-7,https://materials.hybrid3.duke.edu/materials/datasets/1587/files/,S-MBA2PbI4_100K.cif,single_crystal_xrd
