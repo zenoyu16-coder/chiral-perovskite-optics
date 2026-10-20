@@ -1,0 +1,103 @@
+{
+  "paper_doi": "10.1038/s41586-024-07560-4",
+  "source_doi": "10.17605/OSF.IO/2M35K",
+  "files": {
+    "optical": {
+      "name": "Extended_data_fig_8_Absorbance_CD_CPL.txt",
+      "url": "https://osf.io/download/65b2918b4aa63c0777df18b3/",
+      "sha256": "daca2fc5404ed300f33c92b9ad80d6d5b7bbcdb0af6e97c3c34835c7e10e6f01"
+    },
+    "device": {
+      "name": "Fig_2c_current_vs_DOCP.txt",
+      "url": "https://osf.io/download/65b28ad5973819072c396b67/",
+      "sha256": "b159ee00c1ac33855e94f5390b981cf8f3e70246a3b6cda4715d4ef33a4f8554"
+    },
+    "repeat_a": {
+      "name": "Extended_data_fig_4b_polvscurrent_device1b.txt",
+      "url": "https://osf.io/download/5gm7n/",
+      "sha256": "5f29dadea4bc9e1ae405b8555dea579f7908dca5b4da6b2502fb476ac40f9267"
+    },
+    "repeat_b": {
+      "name": "Extended_data_fig_5b_polvscurrent_device3b.txt",
+      "url": "https://osf.io/download/66671e4365e1de54cf8940a0/",
+      "sha256": "dee189040595a06656f6f97796074c1d1bc58a8c8bb52c60b329f3e6a4aae125"
+    }
+  },
+  "optical": {
+    "cd_points": 401,
+    "cd_wavelength_nm": [
+      290.0,
+      650.0
+    ],
+    "abs_points": 501,
+    "abs_wavelength_nm": [
+      300.0,
+      800.0
+    ],
+    "cd_R_S_pearson": -0.8752273482516372,
+    "cd_antisymmetry_residual_ratio": 0.5359986622155556,
+    "abs_R_S_pearson": 0.9991767223425396,
+    "abs_relative_l2_difference": 0.08374456036915956,
+    "unit_note": "CD raw file does not specify units; do not assert mdeg from this file alone.",
+    "caution": "Continuous wavelength points are correlated; no hypothesis-test p-values. R/S are not paired device specimens."
+  },
+  "device": {
+    "source_columns": [
+      "current1M",
+      "polarization",
+      "polarization1",
+      "error",
+      "error1"
+    ],
+    "n_current_rows": 6,
+    "opposite_sign_rows": 6,
+    "raw_channel_assignment": "A=polarization, B=polarization1; direct association to R/S NOT confirmed by TSV alone.",
+    "uncertainty_note": "error/error1 may be instrumental or sample scatter; do not infer statistical significance without caption/method metadata",
+    "rows": [
+      {
+        "current_from_column_1": 15.0,
+        "channel_A": 14.9027,
+        "channel_B": -11.4611,
+        "reported_error_A": 4.04036,
+        "reported_error_B": 0.94508
+      },
+      {
+        "current_from_column_1": 10.0,
+        "channel_A": 8.77164,
+        "channel_B": -12.6232,
+        "reported_error_A": 2.76886,
+        "reported_error_B": 0.592487
+      },
+      {
+        "current_from_column_1": 5.0,
+        "channel_A": 10.2698,
+        "channel_B": -8.36902,
+        "reported_error_A": 2.02649,
+        "reported_error_B": 1.57668
+      },
+      {
+        "current_from_column_1": 3.0,
+        "channel_A": 4.56621,
+        "channel_B": -10.0614,
+        "reported_error_A": 2.64838,
+        "reported_error_B": 5.49067
+      },
+      {
+        "current_from_column_1": 2.0,
+        "channel_A": 0.273973,
+        "channel_B": -3.2464,
+        "reported_error_A": 1.04326,
+        "reported_error_B": 1.61102
+      },
+      {
+        "current_from_column_1": 1.0,
+        "channel_A": 3.01921,
+        "channel_B": -3.7629,
+        "reported_error_A": 1.34681,
+        "reported_error_B": 0.0478755
+      }
+    ]
+  },
+  "duplicate_extended_fig_4b_and_5b": true,
+  "scope": "Static/steady-state device and spectroscopy; NOT time-resolved chiral spin lifetime data."
+}

@@ -2,11 +2,28 @@
 
 Experimental-crystal-structure and spectroscopy exploration of chiral layered halide perovskites.
 
-Question: How does a chiral molecular spacer alter the geometry of an inorganic semiconductor, and how much of the observed optical activity can be reliably linked to that geometry?
+Question: Which experimentally observable optical and optoelectronic responses depend on molecular handedness, and which controls are needed before relating those signals to exciton or spin dynamics?
 
 The repository uses real experimental data and keeps source provenance. There is no ML or DFT model at this stage.
 
-## Stage 3 — exciton and polarization dynamics (current)
+## Stage 4 — experimental chiral optical/device control (current)
+
+An unexpectedly useful open dataset comes from Hautzinger et al., *Nature* **631**, 307–312 (2024), [doi:10.1038/s41586-024-07560-4](https://doi.org/10.1038/s41586-024-07560-4), [raw OSF archive](https://doi.org/10.17605/OSF.IO/2M35K).
+
+We reproduce R/S-MBA2PbI4 absorbance and CD spectra plus two reported spin-LED DOCP channels without inventing spin lifetimes or assigning unlabeled channel identities. Correctly parsing the ragged optical TSV is critical: it contains **401 CD**, **501 absorption**, and **696 PL** rows on different wavelength axes. The verified optical results give R/S absorbance correlation +0.9992 and CD correlation -0.8752. The two recorded device DOCP series have opposite signs at all 6 tabulated currents, but the TSV by itself does not assign each channel to R or S or establish independent device batches. Two other figure-source files contain exact duplicate numerical values and must not be counted as independent replicates.
+
+See [data audit, limitations and decision gate](docs/spin_led_data_pilot.md).
+
+```powershell
+python -m pip install -e ".[dev,viz]"
+python -m chiral_perovskites.chiral_device_pilot fetch
+python -m chiral_perovskites.chiral_device_pilot analyze
+python -m pytest -q
+```
+
+Derived plots and a source-hashed report are saved under `results/osf_chiral_*`. The source data stay untracked under `data/raw/`. This is a **static optical/device control**, while matched chiral time-resolved polarization data remain the unresolved gate for the exciton-dynamics study.
+
+## Stage 3 — exciton and polarization dynamics (data-access gate)
 
 Before developing a kinetic mechanism, we audited availability of original, **matched R/S time-resolved polarization measurements**. See [data feasibility and acceptance criteria](docs/dynamics-data-feasibility.md). No complete downloadable R/S counterpart with independently verified timing/channel metadata has been secured yet.
 

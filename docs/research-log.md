@@ -22,3 +22,11 @@ After scientific audit of Stage 2, selected a more general physical question: po
 Downloaded a machine-readable, open **nonchiral** transient absorption trace from Cambridge [CAM.54010](https://doi.org/10.17863/CAM.54010). It contains 312 time points (-5 to 1750 ps) and six polarization-labeled columns. Independently coded input checks, baseline/noise summary and a channel plot. Header channels `||` and `X` are preserved without guessing which optical convention they represent. We do **not** fit a spin lifetime from this exercise.
 
 The complete source survey, decisions, and go/no-go criteria are in `docs/dynamics-data-feasibility.md`. The study will only expand when original chiral R/S kinetic data (plus instrument response and measurement metadata) can be obtained.
+
+## 2026-10-20 — Stage 4: public experimental chiral spin-LED optical/device baseline
+
+Hautzinger et al., Nature 631 (2024) deposit real R/S-MBA2PbI4 CD/absorbance and spin-LED polarization data under OSF 2M35K. Downloaded sources, SHA-256 tracked, and wrote `chiral_device_pilot.py` with regression tests against ragged TSV column shifts.
+
+The correct measured series counts are 401 CD rows, 501 absorbance rows and 696 PL rows. CD R/S correlation -0.8752, absorbance R/S correlation +0.9992; the two published polarization channel series have opposite reported signs at all six current values, but source TSV labels do not identify which channel is R/S. Also discovered that two extended-figure source tables have exactly equal numeric contents, so avoid counting them twice.
+
+This is a descriptive steady-state cross-check, NOT the chiral pump-probe kinetics originally sought. Do not infer a spin-lifetime, chiral injection transfer efficiency or mechanistic CISS from these source files. See `docs/spin_led_data_pilot.md`.
