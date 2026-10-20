@@ -167,7 +167,7 @@ def create_figures(optical: list[dict], device: list[dict], out_dir: Path) -> No
     ax.errorbar(xs[order], a[order], yerr=ea[order], marker="o", capsize=3, label="polarization (source column)")
     ax.errorbar(xs[order], b[order], yerr=eb[order], marker="s", capsize=3, label="polarization1 (source column)")
     ax.axhline(0,color="gray",linewidth=0.8)
-    ax.set(xlabel="Applied current (raw source values; units via article)", ylabel="Degree of circular polarization (source values)", title="Published spin-LED data — column identities require figure verification")
+    ax.set(xlabel="Applied current (raw source values; units via article)", ylabel="Degree of circular polarization (source values)", title="Spin-LED circular polarization vs applied current")
     ax.legend(fontsize=8)
     fig.savefig(out_dir/"osf_chiral_device_docp.png",dpi=180)
     plt.close(fig)

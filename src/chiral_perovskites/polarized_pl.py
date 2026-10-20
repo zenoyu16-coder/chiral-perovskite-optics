@@ -205,7 +205,7 @@ def plot_one_reproduction(t:np.ndarray, s:np.ndarray, r:np.ndarray,
         axes[1].set_xlabel("Delay (ps)")
         axes[1].set_ylabel("Bright-signal channel contrast (%)")
         axes[1].grid(alpha=.2)
-    fig.suptitle("Source Data Fig. 3c / reproduced chiral SF polarization — no kinetic fit", fontsize=13, y=.98)
+    fig.suptitle("Time-resolved PL and circular polarization", fontsize=13, y=.98)
     fig.text(.02,.040,"Wei et al., Nature 654, 369–374 (2026) | DOI 10.1038/s41586-026-10637-x | 300 µJ/cm²",fontsize=8)
     fig.text(.02,.019,"*RMBA column 2 repeats 'LCP' in publisher XLSX; provisionally opposite-helicity. "
              "Temporal resolution ~10 ps (source spacing 0.35 ps).",fontsize=8)

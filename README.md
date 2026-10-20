@@ -1,66 +1,61 @@
-# Chirality and polarization in layered halide perovskites
+# Optical data from chiral layered perovskites
 
-Organic chiral cations can alter the symmetry of layered halide perovskites and the polarization of their optical response. This repository examines published crystal structures, circular dichroism, polarized emission and time-resolved measurements to distinguish structural chirality from the optical and device signals associated with it.
+This started with a comparison of R-, S- and racemic NEA₂PbBr₄ crystal structures. The symmetry assignments were straightforward, but the available optical measurements were made on different crystals or thin films. There was no direct way to relate a particular octahedral distortion to a measured circular-dichroism signal.
 
-The work uses experimental datasets from several studies. The central analysis concerns R/S and achiral perovskite superlattices; single-crystal geometry and chiral spin-LED measurements provide separate comparisons. Results are reproductions and data checks of published experiments, with no new physical mechanism claimed.
+I subsequently looked at published optical datasets that contained both polarization channels, especially the chiral superlattice measurements reported by Wei et al. in 2026. The repository contains the corresponding analysis scripts, selected plots and structural comparisons. All spectra and crystal structures are taken from the cited experimental studies.
 
-## Circularly polarized superfluorescence
+## Time-resolved emission
 
-Wei et al., [*Nature* 654 (2026) 369–374](https://doi.org/10.1038/s41586-026-10637-x), measured polarization-resolved emission from quasi-two-dimensional perovskite superlattices containing R- or S-MBA spacers. Their Fig. 3 source data include paired emission channels over 1,399 delays and a separate fluence-dependent polarization series.
+Wei et al., [*Nature* **654**, 369–374 (2026)](https://doi.org/10.1038/s41586-026-10637-x), published polarization-resolved photoluminescence from superlattices made with R- or S-MBA. Source Data Fig. 3c contains 1,399 delay points for each sample, measured at a pump fluence of 300 µJ cm⁻².
 
-![Reproduced time-resolved emission and circular polarization from published source data](results/nature2026_sf_fig3c_reproduction.png)
+![Time-resolved PL and polarization contrast](results/nature2026_sf_fig3c_reproduction.png)
 
-The degree of circular polarization at the peak of the total emission is +13.49% for the S-MBA sample and −13.76% for R-MBA, calculated directly from the deposited time traces. Subtracting the mean pre-burst background changes these to +13.52% and −13.81%. These values agree with the paper's Fig. 3d measurements near 300 µJ cm⁻².
+Taking the left- and right-circular channels at the maximum of their summed intensity gives peak circular polarization of +13.49% for S-MBA and −13.76% for R-MBA. The corresponding values after subtracting the pre-burst background are +13.52% and −13.81%. Both agree with the published values near 300 µJ cm⁻².
 
-The corresponding fluence data provide an achiral PEA control. Superfluorescence occurs in all three superlattices, while the reported circularly polarized superfluorescence is specific to the chiral samples.
+There is a small but important issue in the Excel file: the second RMBA channel is also headed `LCP`. Its numerical values reproduce the negative polarization reported in the paper when treated as the opposite-helicity channel. The script preserves the deposited header and records this interpretation separately.
 
-![Pump-fluence dependence of superfluorescence and circular polarization](results/nature2026_fluence_control.png)
+The source traces are sampled approximately every 0.35 ps, although the streak-camera resolution reported in the paper is about 10 ps. I have left the analysis at the measured polarization contrast rather than fitting a relaxation time to that sampling interval.
 
-The authors report the following superfluorescence thresholds from time-integrated photoluminescence:
+## Pump fluence and the PEA control
 
-| Superlattice | Published threshold (µJ cm⁻²) |
+The same paper contains fluence-dependent PL for S-MBA, R-MBA and the nonchiral PEA superlattice. PEA also shows superfluorescence. The paper reports circularly polarized superfluorescence for the two chiral samples.
+
+![Published PL fluence response and circular polarization](results/nature2026_fluence_control.png)
+
+| Sample | Superfluorescence threshold reported by Wei et al. (µJ cm⁻²) |
 | --- | ---: |
 | S-MBA | 70 ± 10 |
 | R-MBA | 95 ± 10 |
-| PEA (achiral) | 140 ± 10 |
+| PEA | 140 ± 10 |
 
-The left panel compares each source intensity series relative to its own first measurement. The measured intensities are in arbitrary units and have not been calibrated for comparison across different samples. The right panel shows the deposited R/S peak-polarization data and reported errors.
+These thresholds are taken from the paper's time-integrated PL analysis. The plotted intensity curves are normalized separately, since their raw detector units are not comparable between specimens.
 
-[Polarized-emission analysis](docs/methods.md) · [Numerical results](docs/results.md) · [Fig. 3 audit](results/nature2026_sf_fig3c_audit.json) · [Fluence source audit](results/nature2026_fluence_control_audit.json)
+Another mismatch occurs in the deposited RMBA data: Extended Data Fig. 7a has a time trace labeled 85 µJ cm⁻², whereas Fig. 7b lists an intensity point at 82 µJ cm⁻². The scripts keep these records separate.
 
-## Optical and structural comparisons
+## Other measurements
 
-Hautzinger et al., [*Nature* 631 (2024) 307–312](https://doi.org/10.1038/s41586-024-07560-4), published R/S-MBA perovskite absorption and CD spectra together with circularly polarized electroluminescence from spin-LEDs employing AlGaInP quantum wells.
+The [Hautzinger et al. spin-LED dataset](https://doi.org/10.1038/s41586-024-07560-4) has R/S-MBA absorption, CD and circularly polarized electroluminescence data. The absorption spectra nearly overlap (Pearson r = 0.9992), while the CD traces change sign but are not exact mirror images (r = −0.8752). The electroluminescence comes from an AlGaInP quantum well, so it is treated as a separate device experiment.
 
-![R/S-MBA absorption and circular dichroism from the OSF deposit](results/osf_chiral_cd_abs_pair.png)
+The [Jana et al. crystal structures](https://doi.org/10.1038/s41467-020-18485-7) give `P2₁` for R/S-NEA₂PbBr₄ and `P2₁/c` for the racemate at 298 K. The local Pb–Br geometry and a separate S-MBA₂PbI₄ temperature series are retained under `results/`. An additional front/back CD dataset and a nonchiral transient-absorption example were used to check source-file handling.
 
-Across the deposited wavelengths, the R/S absorption spectra have a Pearson correlation of 0.9992; the CD spectra give −0.8752. The two device-polarization series have opposite signs at six reported current settings. The source file does not identify the handedness of each device-polarization column, so the analysis retains the original channel labels. The quantum-well emission is considered separately from intrinsic perovskite photoluminescence.
+[Detailed results](docs/results.md) · [Methods](docs/methods.md) · [Original datasets](data/README.md)
 
-Jana et al., [*Nature Communications* 11 (2020) 4699](https://doi.org/10.1038/s41467-020-18485-7), deposited R-, S- and racemic NEA₂PbBr₄ crystal structures at 298 K. The R/S structures are assigned to `P2₁`; the racemic structure is `P2₁/c`. The project also contains a 100–298 K series for S-MBA₂PbI₄. Local octahedral geometry is reported alongside symmetry, without using a crystallographic axis-dependent displacement sign as an absolute handedness label.
+## Running the analyses
 
-[Experimental structures](results/nea_matched_298K.csv) · [Structural methods](docs/methods.md)
-
-## Reproducibility
-
-Requires Python 3.10 or later. Raw CIF and spectroscopy files are downloaded from their original repositories and are excluded from Git; source identifiers and checksums are stored with the derived results.
+Python 3.10 or later:
 
 ```bash
 python -m pip install -e ".[dev,viz]"
-
-# Download source files and regenerate analyses
 python scripts/reproduce.py --fetch
-
-# Run the unit tests and verify recorded output fingerprints
 python -m pytest -q
-python scripts/verify_results.py
 ```
 
-To regenerate results without downloading, run `python scripts/reproduce.py` after obtaining the original input files. The individual analysis modules are listed in [Methods](docs/methods.md).
+The first script downloads the original CIF and spectroscopy files and regenerates the plots and tables. When the input files are already present, `python scripts/reproduce.py` reruns the calculations without downloading them.
 
-The repository contains Python analysis code in `src/chiral_perovskites/`, tests in `tests/`, selected figures and tables in `results/`, and the corresponding source inventory in [data/README.md](data/README.md). The [results manifest](results/manifest.json) records hashes for the committed outputs.
+Source measurements stay in `data/raw/`, outside version control. `src/chiral_perovskites/` contains the analysis routines; `results/` contains the published-data comparisons. `python scripts/verify_results.py` checks the committed outputs against [their recorded hashes](results/manifest.json).
 
-## Experimental follow-up
+## Possible experiment
 
-The open data establish reproducible comparisons of published observations. Testing how handedness affects polarization retention would require matched R/S/achiral samples, independent fabrication batches, polarization-resolved time traces, and instrument-response and orientation controls. These measurements are not part of the current repository.
+I have not collected new samples or polarization-resolved measurements for this repository. Before attempting a time-resolved chirality experiment, the practical first step is to establish whether reliable circular-polarization-resolved PL is available for matched R/S films, with sample rotation and polarization calibration. Without that measurement, further analysis of these published traces would mostly revisit the authors' results.
 
-[Experimental considerations](docs/experimental-follow-up.md) · [Data sources](data/README.md) · [License](LICENSE) · [Citation](CITATION.cff)
+[Experimental notes](docs/experimental-follow-up.md) · [License](LICENSE) · [Citation](CITATION.cff)
