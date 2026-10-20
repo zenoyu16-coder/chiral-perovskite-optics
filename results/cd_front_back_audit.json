@@ -1,0 +1,18 @@
+{
+  "source_doi": "10.1002/adma.202415901",
+  "dataset_id": "2784",
+  "sample_type": "thin_film",
+  "data_labels": [
+    "front",
+    "back",
+    "average (as deposited)"
+  ],
+  "rows": 301,
+  "wavelength_min_nm": 300.0,
+  "wavelength_max_nm": 600.0,
+  "max_abs_deposited_minus_sum_mdeg": 8.000000000119023e-05,
+  "max_abs_deposited_minus_mean_mdeg": 7.708800000000002,
+  "rmse_deposited_minus_sum_mdeg": 8.956473354476176e-06,
+  "rmse_deposited_minus_mean_mdeg": 1.598610429871712,
+  "note": "Deposited third trace numerically resembles front+back, not (front+back)/2. This may reflect an unrecorded scaling convention; do not label this a publication error without inspecting original processing."
+}
