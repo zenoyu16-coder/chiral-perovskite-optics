@@ -21,7 +21,7 @@ python -m chiral_perovskites.chiral_device_pilot analyze
 python -m pytest -q
 ```
 
-Derived plots and a source-hashed report are saved under `results/osf_chiral_*`. The source data stay untracked under `data/raw/`. This is a **static optical/device control**, while matched chiral time-resolved polarization data remain the unresolved gate for the exciton-dynamics study.
+Derived plots and a source-hashed report are saved under `results/osf_chiral_*`. An additional bounded error-bar sensitivity check is available via `python -m chiral_perovskites.spin_led_gate` (6/6 raw opposite signs, 5/6 at ±1× source error and 4/6 at ±2×; **not** a confidence test). The source data stay untracked under `data/raw/`. This is a **static optical/device control**, while matched chiral time-resolved polarization data remain the unresolved gate. See [science decision checkpoint](docs/science_gate_2026-10-20.md) before expanding this branch.
 
 ## Stage 3 — exciton and polarization dynamics (data-access gate)
 

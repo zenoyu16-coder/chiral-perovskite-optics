@@ -30,3 +30,11 @@ Hautzinger et al., Nature 631 (2024) deposit real R/S-MBA2PbI4 CD/absorbance and
 The correct measured series counts are 401 CD rows, 501 absorbance rows and 696 PL rows. CD R/S correlation -0.8752, absorbance R/S correlation +0.9992; the two published polarization channel series have opposite reported signs at all six current values, but source TSV labels do not identify which channel is R/S. Also discovered that two extended-figure source tables have exactly equal numeric contents, so avoid counting them twice.
 
 This is a descriptive steady-state cross-check, NOT the chiral pump-probe kinetics originally sought. Do not infer a spin-lifetime, chiral injection transfer efficiency or mechanistic CISS from these source files. See `docs/spin_led_data_pilot.md`.
+
+## 2026-10-20 — Scope and evidence gate after Stage 4
+
+Rechecked the Nature 2024 spin-LED paper against its 2023 arXiv manuscript Fig. 2. The preprint has an apparent handedness-to-sign inconsistency across panel labels, intensity convention and adjacent prose; the underlying OSF source data do not explicitly label the two DOCP series as R and S. Accordingly the analysis keeps anonymous A/B labels.
+
+New bounded uncertainty test, using deposited Fig. 2c errors without assigning their statistical interpretation: raw signs opposite 6/6 current settings; both A/B error intervals avoid zero at 1x error for 5/6 and 2x error for 4/6. Current points are not independent fabricated devices. See `results/spin_led_uncertainty_gate.json` and `docs/science_gate_2026-10-20.md`.
+
+Found Wei et al., Nature 654 (2026), DOI 10.1038/s41586-026-10637-x, with R/S chiral perovskite superfluorescence, a time-resolved Fig. 3 and publisher XLSX Source Data. Downloaded Fig. 3 XLSX only; its columns and sample-level pairing are NOT yet verified. This is the next data-access checkpoint. Do not expand spin-LED correlations or fit a kinetic mechanism without validated matched raw data.
