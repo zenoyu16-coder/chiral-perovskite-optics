@@ -45,3 +45,14 @@ Found Wei et al., Nature 654 (2026), DOI 10.1038/s41586-026-10637-x, with R/S ch
 Source Data Fig. 3 of Wei et al., Nature 654 (2026), DOI 10.1038/s41586-026-10637-x, retrieved (209,136 byte XLSX). Fig. 3c has 1399 matched-delay sample points for SMBA and RMBA helicity-channel emission. Validated against the deposited experimental Fig. 3d curve. Reproduced peak DCP0 +13.4949% (SMBA) and -13.7612% (RMBA), near the reported +13.5%/-13.8%. Baseline corrections do not change their signs or magnitude materially. RMBA Fig. 3c carries two literal 'LCP' headers; this is flagged rather than silently repaired.
 
 Reproducible code plus tests in `nature_sf_pilot.py`; raw figure workbook not redistributed. The 0.3495 ps source sampling step is far finer than the reported ~10 ps camera temporal resolution. Different sample peak times are not interpretable as intrinsic handedness delays. This is the completed single-observation pilot and does not justify a spin/exciton lifetime fit or large DFT/ML work. See `docs/nature2026_sf_pilot.md`.
+
+
+## 2026-10-20 — Stage 6: chiral/achiral fluence controls and stopping decision
+
+Downloaded and verified publisher source workbooks for Wei et al. Nature 2026 SMBA, RMBA, and PEA superlattice pump-fluence series (Fig. 2c; Extended Data Figs. 6a,b / 7a,b; Fig. 3d). The initial ED7 link returned HTML, which was rejected and replaced by the publisher's valid static-content Excel. Four source SHA-256 hashes are pinned in `fluence_sources.py`.
+
+The source lists 10 SMBA, 10 RMBA and 12 PEA peak-intensity points. Nonchiral PEA has nonlinear superfluorescence, so collective emission does not itself require molecular chirality. Published *time-integrated* SF thresholds are 70±10, 95±10, 140±10 µJ cm^-2 for S,R,PEA. Simple 2x propagated-error rules for source DCP identify the first sampled nonzero S/R points at 95.4 and 134.66 µJ cm^-2; these are NOT new physical thresholds.
+
+Found an 85 (ED7a) vs 82 (ED7b) µJ cm^-2 labelling inconsistency in RMBA source workbooks. No row-index merging or imputed condition is permitted.
+
+Science gate: the main claims and detailed quantum-optics mechanism belong to the authors. This is a faithful control-focused replication, and does not independently establish structural cause, spin lifetime, or an original result. Future useful work requires an experiment with independent R/S/PEA batches, paired LCP/RCP time-resolved measurements, comparable growth and pump/collection conditions, and calibrated IRF. Freeze public-data analysis now rather than multiplying descriptors. See `docs/nature2026_fluence_controls.md`.

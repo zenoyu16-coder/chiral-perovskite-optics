@@ -6,6 +6,21 @@ Question: Which experimentally observable optical and optoelectronic responses d
 
 The repository uses real experimental data and keeps source provenance. There is no ML or DFT model at this stage.
 
+## Stage 6 — chiral/achiral fluence control (completed)
+
+Verified publisher source workbooks for the SMBA, RMBA and achiral PEA superlattices, including pump-dependent peak PL intensity and separate S/R peak circular-polarization data. The nonchiral PEA sample also exhibits superfluorescence; circularly polarized superfluorescence is only established for R/S in the paper. We compare within-sample intensity *shape* and reported DCP values, without fitting new thresholds or treating different specimens as independent controls for causation.
+
+Published time-integrated PL SF thresholds: S 70±10, R 95±10, PEA 140±10 µJ/cm². Under a transparent 2x source-propagated-error arithmetic rule, first nonzero deposited DCP values occur at 95.4 (S) and 134.66 (R) µJ/cm². These are not newly measured thresholds. Raw ED7a has a nominal RMBA 85 µJ/cm² series whereas ED7b lists 82 µJ/cm²; their rows are **not blindly joined**.
+
+```powershell
+python -m pip install -e ".[dev,viz]"
+python -m chiral_perovskites.fluence_gate --fetch
+python -m chiral_perovskites.fluence_gate
+python -m pytest -q
+```
+
+See [science outcome and limitations](docs/nature2026_fluence_controls.md), [control chart](results/nature2026_fluence_control.png), and [machine-readable source audit](results/nature2026_fluence_control_audit.json). The original publisher workbooks remain git-ignored. This completes the current public-data research pilot; no new DFT, ML, or kinetic mechanisms follow from the published source arrays.
+
 ## Stage 5 — chiral superfluorescence: one-figure dynamics reproduction
 
 The Nature 2026 study by Wei et al. provides usable time-resolved polarized emission traces of **SMBA and RMBA chiral quasi-2D superlattices**, unlike the static spin-LED data and the nonchiral Cambridge control. Its [Fig. 3 source workbook](https://www.nature.com/articles/s41586-026-10637-x) has 1,399 delay points, paired polarization channels and a separate DCP-versus-fluence cross-check. We reproduced the authors' peak DCP signs and magnitudes: **SMBA +13.49%**, **RMBA -13.76%** (raw source arrays), agreeing with Fig. 3d near 300 µJ cm^-2. Changes under different pre-burst background choices are small.

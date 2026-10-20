@@ -1,0 +1,344 @@
+{
+  "paper_doi": "10.1038/s41586-026-10637-x",
+  "files": {
+    "SMBA": {
+      "publisher_workbook": "nature2026_source_fig2.xlsx",
+      "sha256": "7a94679a0f6fdb2b41fd7852915f0d88babbe35efed23a5dd6a0503de870b1fe"
+    },
+    "RMBA": {
+      "publisher_workbook": "nature2026_source_ED7.xlsx",
+      "sha256": "b1e92e1cef9d8a37908bfc6a10114828420abfb4419447b273921c8074566608"
+    },
+    "PEA": {
+      "publisher_workbook": "nature2026_source_ED6.xlsx",
+      "sha256": "d505c422ee49d20255587d8efd55de957d89985c488461b2bc5d78e848ff5e42"
+    },
+    "DCP": {
+      "publisher_workbook": "nature2026_source_fig3.xlsx",
+      "sha256": "4f06825a839ba470e96fc45d9587db4d5f42067c41b2d03762e26ed64d217c29"
+    }
+  },
+  "science_question": "Do source arrays show superlinear SF-like emission in achiral and chiral samples, while DCP emerges robustly only in chiral ones?",
+  "published_reference_thresholds_from_time_integrated_PL": {
+    "SMBA": [
+      70,
+      10
+    ],
+    "RMBA": [
+      95,
+      10
+    ],
+    "PEA": [
+      140,
+      10
+    ]
+  },
+  "intensity": {
+    "SMBA": {
+      "n_fluences": 10,
+      "raw_fluence_uJ_cm2": [
+        16.99,
+        33.98,
+        45.28,
+        56.62,
+        84.93,
+        113.23,
+        169.85,
+        198.16,
+        226.47,
+        283.09
+      ],
+      "raw_peak_PL_source_units": [
+        24.0,
+        63.0,
+        102.0,
+        142.0,
+        379.0,
+        1340.0,
+        4805.0,
+        7986.0,
+        10445.0,
+        12235.0
+      ],
+      "within_sample_intensity_relative_to_first_point": [
+        1.0,
+        2.625,
+        4.25,
+        5.916666666666667,
+        15.791666666666666,
+        55.833333333333336,
+        200.20833333333334,
+        332.75,
+        435.2083333333333,
+        509.7916666666667
+      ],
+      "paper_time_integrated_SF_threshold_uJ_cm2": 70,
+      "paper_threshold_quoted_error_uJ_cm2": 10,
+      "source_sheet": "Fig.2c left"
+    },
+    "RMBA": {
+      "n_fluences": 10,
+      "raw_fluence_uJ_cm2": [
+        23.0,
+        28.0,
+        45.0,
+        70.0,
+        82.0,
+        113.0,
+        169.0,
+        226.0,
+        283.0,
+        328.0
+      ],
+      "raw_peak_PL_source_units": [
+        52.0,
+        71.0,
+        124.0,
+        233.0,
+        448.0,
+        1148.0,
+        3458.0,
+        5067.0,
+        7210.0,
+        8084.0
+      ],
+      "within_sample_intensity_relative_to_first_point": [
+        1.0,
+        1.3653846153846154,
+        2.3846153846153846,
+        4.480769230769231,
+        8.615384615384615,
+        22.076923076923077,
+        66.5,
+        97.4423076923077,
+        138.65384615384616,
+        155.46153846153845
+      ],
+      "paper_time_integrated_SF_threshold_uJ_cm2": 95,
+      "paper_threshold_quoted_error_uJ_cm2": 10,
+      "source_sheet": "Extended Data Fig. 7b"
+    },
+    "PEA": {
+      "n_fluences": 12,
+      "raw_fluence_uJ_cm2": [
+        11.0,
+        27.0,
+        55.0,
+        82.0,
+        105.0,
+        118.0,
+        132.0,
+        214.0,
+        308.0,
+        427.0,
+        482.0,
+        550.0
+      ],
+      "raw_peak_PL_source_units": [
+        30.0,
+        122.0,
+        386.0,
+        639.0,
+        873.0,
+        1379.0,
+        1658.0,
+        7218.0,
+        18780.0,
+        36273.0,
+        42303.0,
+        48286.0
+      ],
+      "within_sample_intensity_relative_to_first_point": [
+        1.0,
+        4.066666666666666,
+        12.866666666666667,
+        21.3,
+        29.1,
+        45.96666666666667,
+        55.266666666666666,
+        240.6,
+        626.0,
+        1209.1,
+        1410.1,
+        1609.5333333333333
+      ],
+      "paper_time_integrated_SF_threshold_uJ_cm2": 140,
+      "paper_threshold_quoted_error_uJ_cm2": 10,
+      "source_sheet": "Extended Data Fig. 6b"
+    }
+  },
+  "dcp": {
+    "SMBA": {
+      "n_deposited_points": 13,
+      "source_points": [
+        {
+          "pump_uJ_cm2": 22.37,
+          "dcp_fraction": 0.001,
+          "propagated_peak_error_fraction": 0.0324,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 28.95,
+          "dcp_fraction": 0.002,
+          "propagated_peak_error_fraction": 0.0205,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 34.21,
+          "dcp_fraction": 0.002,
+          "propagated_peak_error_fraction": 0.0246,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 53.95,
+          "dcp_fraction": 0.002,
+          "propagated_peak_error_fraction": 0.0261,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 69.08,
+          "dcp_fraction": 0.003,
+          "propagated_peak_error_fraction": 0.0212,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 78.95,
+          "dcp_fraction": 0.005,
+          "propagated_peak_error_fraction": 0.0158,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 85.53,
+          "dcp_fraction": 0.01969,
+          "propagated_peak_error_fraction": 0.013,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 95.4,
+          "dcp_fraction": 0.03905,
+          "propagated_peak_error_fraction": 0.0113,
+          "interval_avoids_zero": true
+        },
+        {
+          "pump_uJ_cm2": 131.59,
+          "dcp_fraction": 0.07184,
+          "propagated_peak_error_fraction": 0.006,
+          "interval_avoids_zero": true
+        },
+        {
+          "pump_uJ_cm2": 177.65,
+          "dcp_fraction": 0.09463,
+          "propagated_peak_error_fraction": 0.0034,
+          "interval_avoids_zero": true
+        },
+        {
+          "pump_uJ_cm2": 236.87,
+          "dcp_fraction": 0.12,
+          "propagated_peak_error_fraction": 0.0019,
+          "interval_avoids_zero": true
+        },
+        {
+          "pump_uJ_cm2": 296.09,
+          "dcp_fraction": 0.13529,
+          "propagated_peak_error_fraction": 0.001,
+          "interval_avoids_zero": true
+        },
+        {
+          "pump_uJ_cm2": 332.28,
+          "dcp_fraction": 0.1354,
+          "propagated_peak_error_fraction": 0.0014,
+          "interval_avoids_zero": true
+        }
+      ],
+      "first_2x_error_nonzero_fluence_uJ_cm2": 95.4,
+      "first_2x_error_vs_paper_threshold": "above published upper threshold reference"
+    },
+    "RMBA": {
+      "n_deposited_points": 11,
+      "source_points": [
+        {
+          "pump_uJ_cm2": 54.06,
+          "dcp_fraction": -0.0015,
+          "propagated_peak_error_fraction": 0.0196,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 68.8,
+          "dcp_fraction": -0.0015,
+          "propagated_peak_error_fraction": 0.0223,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 88.46,
+          "dcp_fraction": -0.0015,
+          "propagated_peak_error_fraction": 0.0186,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 98.29,
+          "dcp_fraction": -0.005,
+          "propagated_peak_error_fraction": 0.0164,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 108.12,
+          "dcp_fraction": -0.0133,
+          "propagated_peak_error_fraction": 0.0188,
+          "interval_avoids_zero": false
+        },
+        {
+          "pump_uJ_cm2": 134.66,
+          "dcp_fraction": -0.04139,
+          "propagated_peak_error_fraction": 0.0099,
+          "interval_avoids_zero": true
+        },
+        {
+          "pump_uJ_cm2": 147.44,
+          "dcp_fraction": -0.05945,
+          "propagated_peak_error_fraction": 0.0088,
+          "interval_avoids_zero": true
+        },
+        {
+          "pump_uJ_cm2": 169.06,
+          "dcp_fraction": -0.08958,
+          "propagated_peak_error_fraction": 0.0068,
+          "interval_avoids_zero": true
+        },
+        {
+          "pump_uJ_cm2": 206.41,
+          "dcp_fraction": -0.12379,
+          "propagated_peak_error_fraction": 0.004,
+          "interval_avoids_zero": true
+        },
+        {
+          "pump_uJ_cm2": 255.56,
+          "dcp_fraction": -0.1343,
+          "propagated_peak_error_fraction": 0.0032,
+          "interval_avoids_zero": true
+        },
+        {
+          "pump_uJ_cm2": 294.88,
+          "dcp_fraction": -0.13662,
+          "propagated_peak_error_fraction": 0.0032,
+          "interval_avoids_zero": true
+        }
+      ],
+      "first_2x_error_nonzero_fluence_uJ_cm2": 134.66,
+      "first_2x_error_vs_paper_threshold": "above published upper threshold reference"
+    }
+  },
+  "RMBA_ED7a_fluences_not_in_ED7b_rounded": [
+    85
+  ],
+  "data_limits": [
+    "All three fluence-intensity datasets are source figure arrays, not independent raw streak camera frames.",
+    "Source peak PL intensity is in arbitrary units, and detector/sample normalization between specimens is unknown. Normalization to the first point is only a shape display.",
+    "Published SF thresholds come from time-integrated PL; this script does not refit them to these time-resolved intensity points.",
+    "Published article reports achiral PEA superfluorescence without circularly polarized SF, but no fluence-resolved PEA DCP points were found in the inspected Fig. 3d source arrays.",
+    "Two times the plotted propagated peak-intensity uncertainty is a descriptive exclusion-of-zero gate, NOT a 95-percent confidence interval.",
+    "RMBA ED7a time-series header says 85 uJ/cm2 whereas ED7b intensity record uses 82 uJ/cm2; do not join those traces by position without clarification.",
+    "Fluence sampling differs across specimens; this analysis cannot assign threshold ordering solely to chirality, nor prove a causal mechanism.",
+    "No independently replicated R/S/PEA matched sets or calibrated system response are provided here."
+  ],
+  "decision": "Completed published-data control, NO-GO for new mechanistic fits or comparing absolute signal intensities across specimens."
+}
